@@ -80,6 +80,9 @@ const Header = () => {
           <li>
             <NavLink to={"/myToys"}>My Toys</NavLink>
           </li>
+          <li>
+            <NavLink to={"/addToy"}>Add Toy</NavLink>
+          </li>
         </ul>
       </div>
       <div className="navbar-end">
