@@ -1,9 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import WebsiteLayout from "./WebsiteLayout";
 import Home from "./Pages/Home";
@@ -15,6 +12,7 @@ import MyToys from "./Pages/MyToys";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import AddToy from "./Pages/AddToy";
+import AuthProvider from "./AuthProvider";
 
 const router = createBrowserRouter([
   {
@@ -22,47 +20,49 @@ const router = createBrowserRouter([
     element: <WebsiteLayout></WebsiteLayout>,
     children: [
       {
-        path: '/', 
-        element: <Home></Home>
+        path: "/",
+        element: <Home></Home>,
       },
       {
-        path: '/login',
-        element: <Login></Login>
+        path: "/login",
+        element: <Login></Login>,
       },
       {
-        path: '/register',
-        element: <Register></Register>
+        path: "/register",
+        element: <Register></Register>,
       },
       {
-        path: '/contact',
-        element: <ContactUs></ContactUs>
+        path: "/contact",
+        element: <ContactUs></ContactUs>,
       },
       {
-        path: '/about', 
-        element: <AboutUs></AboutUs>
+        path: "/about",
+        element: <AboutUs></AboutUs>,
       },
       {
-        path: '/blog',
-        element: <Blog></Blog>
+        path: "/blog",
+        element: <Blog></Blog>,
       },
       {
-        path: '/allToys',
-        element: <AllToys></AllToys>
+        path: "/allToys",
+        element: <AllToys></AllToys>,
       },
       {
-        path: '/myToys',
-        element: <MyToys></MyToys>
+        path: "/myToys",
+        element: <MyToys></MyToys>,
       },
       {
-        path: '/addToy',
-        element: <AddToy></AddToy>
-      }
-    ]
+        path: "/addToy",
+        element: <AddToy></AddToy>,
+      },
+    ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>
 );

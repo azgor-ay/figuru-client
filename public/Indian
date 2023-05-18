@@ -1,0 +1,48 @@
+    {
+      "name": "Krrish",
+      "description": "Highly detailed action figure of Krrish, India's iconic superhero, wearing his black costume and mask.",
+      "price": 29.99,
+      "image": "krrish.jpg",
+      "rating": 4,
+      "reviews": 37
+    },
+    {
+      "name": "Shaktimaan",
+      "description": "Collectible action figure of Shaktimaan, India's first superhero, with his blue and gold costume and glowing eyes.",
+      "price": 24.99,
+      "image": "shaktimaan.jpg",
+      "rating": 4.5,
+      "reviews": 52
+    },
+    {
+      "name": "Baahubali",
+      "description": "Poseable action figure of Baahubali, inspired by the epic Indian film series, wielding his sword and donning his royal armor.",
+      "price": 26.99,
+      "image": "baahubali.jpg",
+      "rating": 4,
+      "reviews": 41
+    },
+    {
+      "name": "Chhota Bheem",
+      "description": "Action figure of Chhota Bheem, a popular Indian animated superhero, showcasing his childlike appearance and brave pose.",
+      "price": 22.99,
+      "image": "chhota_bheem.jpg",
+      "rating": 4.5,
+      "reviews": 48
+    },
+    {
+      "name": "Super Commando Dhruva",
+      "description": "Super Commando Dhruva action figure, based on the Indian comic book character, wearing his red and blue costume and utility belt.",
+      "price": 28.99,
+      "image": "super_commando_dhruva.jpg",
+      "rating": 4,
+      "reviews": 35
+    },
+    {
+      "name": "Nagraj",
+      "description": "Nagraj action figure, representing the popular Indian superhero with snake-like powers, in his green and white costume.",
+      "price": 24.99,
+      "image": "nagraj.jpg",
+      "rating": 4.5,
+      "reviews": 43
+    }

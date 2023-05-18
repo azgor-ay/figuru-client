@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../../public/Logo.webp";
+import { AuthContext } from "../../AuthProvider";
+import { Tooltip } from "react-tooltip";
+import { FaUser } from "react-icons/fa";
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+  console.log(user);
+
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 my-5">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -77,16 +83,71 @@ const Header = () => {
           <li>
             <NavLink to={"/allToys"}>All Toys</NavLink>
           </li>
-          <li>
-            <NavLink to={"/myToys"}>My Toys</NavLink>
-          </li>
-          <li>
-            <NavLink to={"/addToy"}>Add Toy</NavLink>
-          </li>
+          {user && (
+            <>
+              <li>
+                <NavLink to={"/myToys"}>My Toys</NavLink>
+              </li>
+              <li>
+                <NavLink to={"/addToy"}>Add Toy</NavLink>
+              </li>
+            </>
+          )}
         </ul>
       </div>
       <div className="navbar-end">
-        <Link to='/login' className="btn btn-primary">Login</Link>
+        {user ? (
+          <div className="flex-none">
+
+            <div className="dropdown dropdown-end">
+              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div className="w-10 rounded-full">
+                  {user.photoURL ? (
+                    <img
+                      className=""
+                      data-tooltip-id="user-name"
+                      data-tooltip-content={
+                        user.displayName ? user.displayName : "Anonymous User"
+                      }
+                      src={user?.photoURL}
+                    />
+                  ) : (
+                    <img
+                      className=""
+                      data-tooltip-id="user-name"
+                      data-tooltip-content={
+                        user.displayName ? user.displayName : "Anonymous User"
+                      }
+                      src="https://i.ibb.co/HBbr8DM/User.png"
+                    />
+                  )}
+                  <Tooltip id="user-name" />
+                </div>
+              </label>
+              <ul
+                tabIndex={0}
+                className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li>
+                  <a className="justify-between">
+                    Profile
+                    <span className="badge">Seller</span>
+                  </a>
+                </li>
+                <li>
+                  <a>Settings</a>
+                </li>
+                <li>
+                  <a onClick={logOut}>Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        ) : (
+          <Link to="/login" className="btn btn-primary">
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );

@@ -1,15 +1,40 @@
 import { useForm } from "react-hook-form";
-import { FaGoogle } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import img from "../assets/Login/groot.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
+import { AuthContext } from "../AuthProvider";
 export default function Register() {
+  const { registerUser, signInWithGoogle } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const [showPass, setShowPass] = useState(false);
+  const [showConPass, setShowConPass] = useState(false);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
-    
+  const onSubmit = (data) => {
+    const { email, password } = data;
+    registerUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
+  const handleAuthenticateWithGoogle = () => {
+    signInWithGoogle()
+      .then((result) => {
+        console.log(result.user);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="hero min-h-screen">
@@ -44,7 +69,6 @@ export default function Register() {
                   className="input input-bordered"
                   {...register("photo")}
                 />
-                
               </div>
               <div className="form-control">
                 <label className="label">
@@ -65,11 +89,21 @@ export default function Register() {
                   <span className="label-text">Password</span>
                 </label>
                 <input
-                  type="text"
+                  type={showPass ? "text" : "password"}
                   placeholder="password"
                   className="input input-bordered"
                   {...register("password", { required: true })}
                 />
+                <div
+                  onClick={() => setShowPass(!showPass)}
+                  className="relative w-4 left-64 lg:left-72 bottom-8 cursor-pointer"
+                >
+                  {showPass ? (
+                    <FaEye className="" />
+                  ) : (
+                    <FaEyeSlash className=" " />
+                  )}
+                </div>
                 {errors.password && (
                   <span className="text-error">Password Field is empty!</span>
                 )}
@@ -79,27 +113,48 @@ export default function Register() {
                   <span className="label-text">Confirm Password</span>
                 </label>
                 <input
-                  type="text"
+                  type={showConPass ? "text" : "password"}
                   placeholder="Re-type password"
                   className="input input-bordered"
                   {...register("confirmPassword", { required: true })}
                 />
+                <div
+                  onClick={() => setShowConPass(!showConPass)}
+                  className="relative w-4 left-64 lg:left-72 bottom-8 cursor-pointer"
+                >
+                  {showConPass ? (
+                    <FaEye className="" />
+                  ) : (
+                    <FaEyeSlash className=" " />
+                  )}
+                </div>
                 {errors.confirmPassword && (
-                  <span className="text-error">Confirm Password Field is empty!</span>
+                  <span className="text-error">
+                    Confirm Password Field is empty!
+                  </span>
                 )}
               </div>
               <div className="form-control mt-6">
                 <input
                   type="submit"
                   className="btn btn-primary"
-                  value="Login"
+                  value="Register"
                 />
-                <p className="text-center pt-2">Already have an account? <Link to="/login" className="link">Login</Link></p>
+                <p className="text-center pt-2">
+                  Already have an account?{" "}
+                  <Link to="/login" className="link">
+                    Login
+                  </Link>
+                </p>
               </div>
               <div className="divider">OR</div>
-              <div className="socialLogin btn">
+              <div
+                className="socialLogin btn"
+                onClick={handleAuthenticateWithGoogle}
+              >
                 <p className="text-xl">
-                  <FaGoogle className="inline mx-1 font-bold "/> Register with Google
+                  <FaGoogle className="inline mx-1 font-bold " /> Register with
+                  Google
                 </p>
               </div>
             </div>

@@ -1,0 +1,48 @@
+    {
+      "name": "Iron Man",
+      "description": "Highly detailed action figure of Iron Man, featuring his iconic armor from the MCU.",
+      "price": 24.99,
+      "image": "iron_man.jpg",
+      "ratings": 5,
+      "reviews": 124
+    },
+    {
+      "name": "Captain America",
+      "description": "Collectible action figure of Captain America, showcasing his patriotic suit and shield.",
+      "price": 19.99,
+      "image": "captain_america.jpg",
+      "ratings": 4,
+      "reviews": 98
+    },
+    {
+      "name": "Thor",
+      "description": "Poseable action figure of Thor, wielding his mighty Mjolnir hammer.",
+      "price": 29.99,
+      "image": "thor.jpg",
+      "ratings": 5,
+      "reviews": 143
+    },
+    {
+      "name": "Hulk",
+      "description": "Large-sized action figure of the Hulk, featuring incredible strength and detailed muscle definition.",
+      "price": 34.99,
+      "image": "hulk.jpg",
+      "ratings": 4,
+      "reviews": 82
+    },
+    {
+      "name": "Black Widow",
+      "description": "Sleek action figure of Black Widow, showcasing her combat skills and signature suit.",
+      "price": 22.99,
+      "image": "black_widow.jpg",
+      "ratings": 4,
+      "reviews": 105
+    },
+    {
+      "name": "Hawkeye",
+      "description": "Poseable action figure of Hawkeye, complete with his trusty bow and arrows.",
+      "price": 18.99,
+      "image": "hawkeye.jpg",
+      "ratings": 3,
+      "reviews": 64
+    },

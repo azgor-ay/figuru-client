@@ -1,0 +1,48 @@
+{
+      "name": "Homelander",
+      "description": "Highly detailed action figure of Homelander, the leader of The Seven, with his signature red, white, and blue costume.",
+      "price": 34.99,
+      "image": "homelander.jpg",
+      "rating": 4.5,
+      "reviews": 62
+    },
+    {
+      "name": "Billy Butcher",
+      "description": "Collectible action figure of Billy Butcher, the leader of The Boys, complete with his trench coat and crowbar.",
+      "price": 29.99,
+      "image": "billy_butcher.jpg",
+      "rating": 4,
+      "reviews": 45
+    },
+    {
+      "name": "Starlight",
+      "description": "Poseable action figure of Starlight, a member of The Seven, featuring her shining superhero costume and glowing energy effects.",
+      "price": 26.99,
+      "image": "starlight.jpg",
+      "rating": 4.5,
+      "reviews": 58
+    },
+    {
+      "name": "The Deep",
+      "description": "Action figure of The Deep, a member of The Seven, with his aquatic-themed costume and a trident.",
+      "price": 22.99,
+      "image": "the_deep.jpg",
+      "rating": 3.5,
+      "reviews": 32
+    },
+    {
+      "name": "Queen Maeve",
+      "description": "Queen Maeve action figure, showcasing her powerful and armored superhero attire as a member of The Seven.",
+      "price": 28.99,
+      "image": "queen_maeve.jpg",
+      "rating": 4,
+      "reviews": 41
+    },
+    {
+      "name": "A-Train",
+      "description": "A-Train action figure, representing the super-fast member of The Seven, with his yellow and black racing suit.",
+      "price": 24.99,
+      "image": "a_train.jpg",
+      "rating": 4.5,
+      "reviews": 55
+    }
