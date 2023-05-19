@@ -3,21 +3,20 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../../public/Logo.webp";
 import { AuthContext } from "../../AuthProvider";
 import { Tooltip } from "react-tooltip";
-import { FaPlus, FaUser } from "react-icons/fa";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   console.log(user);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const handleLogOut= () => {
+  const handleLogOut = () => {
     logOut()
-    .then(result => {
-      navigate('/')
-    })
-    .catch(error => {
-      console.log(error.message);
-    })
-  }
+      .then((result) => {
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   return (
     <div className="navbar bg-base-100 my-5">
       <div className="navbar-start">
@@ -96,7 +95,7 @@ const Header = () => {
                 <NavLink to={"/myToys"}>My Toys</NavLink>
               </li>
               <li>
-                <NavLink to={"/addToy"}> <FaPlus/>Add A Toy</NavLink>
+                <NavLink to={"/addToy"}>Add A Toy</NavLink>
               </li>
             </>
           )}
@@ -105,7 +104,6 @@ const Header = () => {
       <div className="navbar-end">
         {user ? (
           <div className="flex-none">
-
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">

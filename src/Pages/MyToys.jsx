@@ -3,9 +3,11 @@ import { AuthContext } from "../AuthProvider";
 import {
   FaBan,
   FaBoxOpen,
+  FaBroom,
   FaCross,
   FaDumpster,
   FaEdit,
+  FaHandsWash,
   FaPhone,
   FaPlus,
   FaTrash,
@@ -31,27 +33,45 @@ const MyToys = () => {
     console.log(id);
     Swal.fire({
       title: "Do you really want to Delete",
+      text: "Be sure there is no undo or recycle bin",
       confirmButtonText: "Yes",
       confirmButtonColor: "black",
       cancelButtonColor: "#858585",
       showCancelButton: true,
       cancelButtonText: "No",
-      
-    })
-
-    fetch(`http://localhost:5000/actionFigures/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.deletedCount > 0) {
-          setDataChange(!dataChange);
-        }
-      });
+    }).then((result) => {
+      if (result.isConfirmed) {
+        console.log("ho paise");
+        fetch(`http://localhost:5000/actionFigures/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              setDataChange(!dataChange);
+            }
+          });
+      }
+    });
   };
   return (
     <div className="overflow-x-auto w-full">
+      <div className="flex justify-between items-center py-4">
+        <Link to="/addToy">
+          <button className="btn rounded-3xl">
+            {" "}
+            <FaPlus className="mr-2" />
+            Add more toys
+          </button>
+        </Link>
+        <h1 className="text-5xl font-extrabold">
+          All the toys you added to this website
+        </h1>
+        <button className="btn rounded-3xl">
+          Clear All Toys <FaHandsWash className="ml-2" />
+        </button>
+      </div>
       <table className="table w-full">
         {/* head sellerName email image name*/}
         <thead>
