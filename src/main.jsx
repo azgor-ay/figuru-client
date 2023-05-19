@@ -4,7 +4,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import WebsiteLayout from "./WebsiteLayout";
 import Home from "./Pages/Home";
-import ContactUs from "./Pages/ContactUs";
 import AboutUs from "./Pages/AboutUs";
 import Blog from "./Pages/Blog";
 import AllToys from "./Pages/AllToys";
@@ -13,6 +12,8 @@ import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import AddToy from "./Pages/AddToy";
 import AuthProvider from "./AuthProvider";
+import ToyDetails from "./Pages/ToyDetails";
+import AuthRequired from "./AuthRequired";
 
 const router = createBrowserRouter([
   {
@@ -32,10 +33,6 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: "/contact",
-        element: <ContactUs></ContactUs>,
-      },
-      {
         path: "/about",
         element: <AboutUs></AboutUs>,
       },
@@ -44,16 +41,21 @@ const router = createBrowserRouter([
         element: <Blog></Blog>,
       },
       {
+        path: "/singleToyDetails/:id",
+        element: <ToyDetails></ToyDetails>,
+        loader : ({params}) => fetch(`http://localhost:5000/actionFigures?id=${params.id}`)
+      },
+      {
         path: "/allToys",
         element: <AllToys></AllToys>,
       },
       {
         path: "/myToys",
-        element: <MyToys></MyToys>,
+        element: <AuthRequired><MyToys></MyToys></AuthRequired>,
       },
       {
         path: "/addToy",
-        element: <AddToy></AddToy>,
+        element: <AuthRequired><AddToy></AddToy></AuthRequired>,
       },
     ],
   },

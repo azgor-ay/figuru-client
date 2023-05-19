@@ -1,13 +1,23 @@
 import React, { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../../public/Logo.webp";
 import { AuthContext } from "../../AuthProvider";
 import { Tooltip } from "react-tooltip";
-import { FaUser } from "react-icons/fa";
+import { FaPlus, FaUser } from "react-icons/fa";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   console.log(user);
+  const navigate = useNavigate()
 
+  const handleLogOut= () => {
+    logOut()
+    .then(result => {
+      navigate('/')
+    })
+    .catch(error => {
+      console.log(error.message);
+    })
+  }
   return (
     <div className="navbar bg-base-100 my-5">
       <div className="navbar-start">
@@ -72,9 +82,6 @@ const Header = () => {
             <NavLink to={"/"}>Home</NavLink>
           </li>
           <li>
-            <NavLink to={"/contact"}>Contact Us</NavLink>
-          </li>
-          <li>
             <NavLink to={"/about"}>About Us</NavLink>
           </li>
           <li>
@@ -89,7 +96,7 @@ const Header = () => {
                 <NavLink to={"/myToys"}>My Toys</NavLink>
               </li>
               <li>
-                <NavLink to={"/addToy"}>Add Toy</NavLink>
+                <NavLink to={"/addToy"}> <FaPlus/>Add A Toy</NavLink>
               </li>
             </>
           )}
@@ -138,7 +145,7 @@ const Header = () => {
                   <a>Settings</a>
                 </li>
                 <li>
-                  <a onClick={logOut}>Logout</a>
+                  <a onClick={handleLogOut}>Logout</a>
                 </li>
               </ul>
             </div>
