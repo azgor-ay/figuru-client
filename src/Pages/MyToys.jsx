@@ -29,6 +29,30 @@ const MyToys = () => {
       .then((data) => setMyToys(data));
   }, [dataChange]);
 
+  const clearAllToys = () => {
+    Swal.fire({
+      title: "ARE YOU SURELY WANT TO DELETE ALL THE TOYS!",
+      text: "Be sure there is no undo or recycle bin",
+      confirmButtonText: "Clear All",
+      confirmButtonColor: "black",
+      cancelButtonColor: "#858585",
+      showCancelButton: true,
+      cancelButtonText: "No",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/actionFigures?email=${user?.email}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              setDataChange(!dataChange);
+            }
+          });
+      }
+    });
+  };
+
   const handleDelete = (id) => {
     console.log(id);
     Swal.fire({
@@ -68,7 +92,7 @@ const MyToys = () => {
         <h1 className="text-5xl font-extrabold">
           All the toys you added to this website
         </h1>
-        <button className="btn rounded-3xl">
+        <button onClick={clearAllToys} className="btn rounded-3xl">
           Clear All Toys <FaHandsWash className="ml-2" />
         </button>
       </div>
