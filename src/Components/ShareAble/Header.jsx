@@ -78,24 +78,24 @@ const Header = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <NavLink to={"/"}>Home</NavLink>
+            <NavLink className={({isActive})=>isActive ? "activeNav" : "default"} to={"/"}>Home</NavLink>
           </li>
           <li>
-            <NavLink to={"/about"}>About Us</NavLink>
+            <NavLink className={({isActive})=>isActive ? "activeNav" : "default"} to={"/about"}>About Us</NavLink>
           </li>
           <li>
-            <NavLink to={"/blog"}>Blog</NavLink>
+            <NavLink className={({isActive})=>isActive ? "activeNav" : "default"} to={"/blog"}>Blog</NavLink>
           </li>
           <li>
-            <NavLink to={"/allToys"}>All Toys</NavLink>
+            <NavLink className={({isActive})=>isActive ? "activeNav" : "default"} to={"/allToys"}>All Toys</NavLink>
           </li>
           {user && (
             <>
               <li>
-                <NavLink to={"/myToys"}>My Toys</NavLink>
+                <NavLink className={({isActive})=>isActive ? "activeNav" : "default"} to={"/myToys"}>My Toys</NavLink>
               </li>
               <li>
-                <NavLink to={"/addToy"}>Add A Toy</NavLink>
+                <NavLink className={({isActive})=>isActive ? "activeNav" : "default"} to={"/addToy"}>Add A Toy</NavLink>
               </li>
             </>
           )}

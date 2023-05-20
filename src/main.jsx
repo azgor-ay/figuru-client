@@ -14,6 +14,7 @@ import AddToy from "./Pages/AddToy";
 import AuthProvider from "./AuthProvider";
 import ToyDetails from "./Pages/ToyDetails";
 import AuthRequired from "./AuthRequired";
+import UpdateToy from "./Pages/UpdateToy";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +58,11 @@ const router = createBrowserRouter([
       {
         path: "/addToy",
         element: <AuthRequired><AddToy></AddToy></AuthRequired>,
+      },
+      {
+        path: "/updateToy/:id",
+        element: <AuthRequired><UpdateToy></UpdateToy></AuthRequired>,
+        loader: ({params}) =>  fetch(`http://localhost:5000/actionFigures?id=${params.id}`)
       },
     ],
   },

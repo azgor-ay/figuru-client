@@ -1,17 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProvider";
 import {
-  FaBan,
   FaBoxOpen,
-  FaBroom,
-  FaCross,
-  FaDumpster,
   FaEdit,
   FaHandsWash,
   FaPhone,
   FaPlus,
   FaTrash,
-  FaXing,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -173,7 +168,9 @@ const MyToys = () => {
                     </td>
                     <td>${toy.price}</td>
                     <th className="flex justify-evenly items-center">
-                      <FaEdit className="text-3xl " />
+                      <Link to={`/updateToy/${toy._id}`}>
+                        <FaEdit className="text-3xl cursor-pointer" />
+                      </Link>
                       <FaTrash
                         onClick={() => handleDelete(toy._id)}
                         className="text-5xl hover:bg-gray-200 cursor-pointer duration-200 rounded-full px-2 py-3"

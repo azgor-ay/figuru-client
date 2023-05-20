@@ -12,6 +12,14 @@
    @apply text-5xl capitalize font-extrabold text-center py-5 mb-12 bg-clip-text text-transparent bg-gradient-to-br from-amber-500 to-amber-900 drop-shadow-md shadow-info-content
 }
 
+/* Navlinks Buttons */
+.activeNav{
+    @apply btn mx-2 btn-primary
+}
+
+.default{
+    @apply  mx-2
+}
 
 /* pagination buttons */
 .active{

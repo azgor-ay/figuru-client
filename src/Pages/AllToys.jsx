@@ -23,7 +23,9 @@ const AllToys = () => {
     setCurrentPage(0);
   };
   useEffect(() => {
-    fetch(`http://localhost:5000/allToys?page=${currentPage}&limit=${toyPerPage}`)
+    fetch(
+      `http://localhost:5000/allToys?page=${currentPage}&limit=${toyPerPage}`
+    )
       .then((res) => res.json())
       .then((data) => setAllToys(data));
   }, [currentPage, toyPerPage]);
@@ -33,20 +35,23 @@ const AllToys = () => {
   } else {
     return (
       <div className="overflow-x-auto w-full">
-        <div className="text-center py-6">
-          <label className="text-xl">
-            {" "}
-            <FaSearch className="inline" /> Search{" "}
-          </label>
-          <input
-            type="text"
-            name="search"
-            className="input input-primary rounded-3xl"
-            placeholder="Only by toy name . . ."
-            onChange={(e) => {
-              setSearchText(e.target.value);
-            }}
-          />
+        <div className="flex items-center justify-center">
+          <h1 className="title text-5xl">All the products this website has</h1>
+          <div className="text-center py-6">
+            <label className="text-xl relative left-24 border-r pt-2 py-3 pr-3 ">
+              Search
+            </label>
+            <input
+              type="text"
+              name="search"
+              className="border py-3 rounded-3xl pl-28 pr-12"
+              placeholder="Only by toy name . . ."
+              onChange={(e) => {
+                setSearchText(e.target.value);
+              }}
+            />
+            <FaSearch className="inline text-gray-300 relative right-8" />
+          </div>
         </div>
 
         <table className="table w-full">
@@ -148,6 +153,7 @@ const AllToys = () => {
             </tr>
           </tfoot>
         </table>
+
         {/* Pagination */}
         <div className="text-center p-6">
           Pages
