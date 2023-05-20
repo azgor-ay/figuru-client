@@ -1,29 +1,28 @@
-import React from 'react';
-import HomeBanner from '../Components/StandAlone/HomeBanner';
-import PhotoGallery from '../Components/ShareAble/PhotoGallery';
-import TrendingFigures from '../Components/ShareAble/TrendingFigures';
-import PictureGallery from '../Components/ShareAble/PictureGallery';
-import ActionFigures from '../Components/StandAlone/ActionFigures';
-
+import React, { useRef } from "react";
+import HomeBanner from "../Components/StandAlone/HomeBanner";
+import PhotoGallery from "../Components/ShareAble/PhotoGallery";
+import TrendingFigures from "../Components/ShareAble/TrendingFigures";
+import PictureGallery from "../Components/ShareAble/PictureGallery";
+import ActionFigures from "../Components/StandAlone/ActionFigures";
 
 const Home = () => {
-    return (
-        <div>
-            {/* Home page Banner */}
-            <HomeBanner></HomeBanner>
-            
-            {/* Action Figures with Sub Category*/}
-            <ActionFigures></ActionFigures>
+  return (
+    <div>
+      {/* Home page Banner */}
+      <HomeBanner></HomeBanner>
 
-            <PictureGallery></PictureGallery>
+      {/* Action Figures with Sub Category*/}
+      <ActionFigures></ActionFigures>
 
-            {/* Photo Gallery */}
-            <PhotoGallery></PhotoGallery>
+      {/* Photo Gallery */}
+      <PictureGallery></PictureGallery>
+      
+      {/* <PhotoGallery></PhotoGallery> */}
 
-            {/* Trending Action Figures */}
-            <TrendingFigures></TrendingFigures>
-        </div>
-    );
+      {/* Trending Action Figures */}
+      <TrendingFigures></TrendingFigures>
+    </div>
+  );
 };
 
 export default Home;

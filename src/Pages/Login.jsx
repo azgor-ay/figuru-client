@@ -5,7 +5,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider";
 export default function Login() {
-  const { login, signInWithGoogle } = useContext(AuthContext);
+  const { login, signInWithGoogle, setUser } = useContext(AuthContext);
   const [showPass, setShowPass] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -40,12 +40,16 @@ export default function Login() {
   const handleAuthenticateWithGoogle = () => {
     signInWithGoogle()
       .then((result) => {
+        setUser(result.user)
+        console.log(result.user);
         navigate(from, { replace: true });
+        
       })
       .catch((error) => {
         console.log(error.message);
       });
   };
+
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="hero min-h-screen">

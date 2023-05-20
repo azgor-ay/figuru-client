@@ -1,79 +1,33 @@
-import React from "react";
-import slide1 from "../../assets/Banner/Img-1.jpg";
-import slide2 from "../../assets/Banner/Img-2.jpg";
-import slide3 from "../../assets/Banner/Img-3.jpg";
-import slide4 from "../../assets/Banner/Img-4.jpg";
+import React, { useRef } from "react";
 
 const HomeBanner = () => {
+
   return (
-    <div className="carousel w-full">
-      <div id="slide1" className="carousel-item relative w-full">
-        <img src={slide1} className="w-full" />
-        <div className="absolute top-1/4 left-48">
-          <h4 className="title text-3xl">Action Figure of</h4>
-          <h2 className="text-7xl font-extrabold">Rocket Raccoon</h2>
-          <p className="text-3xl py-3">Captain of guardians of the galaxy </p>
-          <div className="btn btn-primary">Buy Now</div>
-        </div>
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide4" className="btn btn-circle btn-primary">
-            ❮
-          </a>
-          <a href="#slide2" className="btn btn-circle btn-primary">
-            ❯
-          </a>
-        </div>
-      </div>
-      <div id="slide2" className="carousel-item relative w-full">
-        <img src={slide2} className="w-full" />
-        <div className="absolute top-1/4 right-48 text-right">
-          <h4 className="title text-3xl">Action Figure of</h4>
-          <h2 className="text-6xl font-extrabold">The OG Guardian</h2>
-          <p className="text-3xl py-3">Rocket Raccoon the captain.</p>
-          <div className="btn btn-primary">Buy Now</div>
-        </div>
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide1" className="btn btn-circle btn-primary">
-            ❮
-          </a>
-          <a href="#slide3" className="btn btn-circle btn-primary">
-            ❯
-          </a>
-        </div>
-      </div>
-      <div id="slide3" className="carousel-item relative w-full">
-        <img src={slide3} className="w-full" />
-        <div className="absolute top-1/4 left-48">
-          <h4 className="title text-3xl">Action Figure of</h4>
-          <h2 className="text-8xl font-extrabold">Baby Groot</h2>
-          <p className="text-3xl py-3">I am groot.</p>
-          <div className="btn btn-primary">Buy Now</div>
-        </div>
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide2" className="btn btn-circle btn-primary">
-            ❮
-          </a>
-          <a href="#slide4" className="btn btn-circle btn-primary">
-            ❯
-          </a>
-        </div>
-      </div>
-      <div id="slide4" className="carousel-item relative w-full">
-        <img src={slide4} className="w-full" />
-        <div className="absolute top-1/4 left-1/3">
-          <h4 className="title text-3xl">Our Awesome Deals</h4>
-          <h2 className="text-8xl font-extrabold">70 - 80% Off</h2>
-          <p className="text-3xl py-3">Hurry up offer closes soon...</p>
-          <div className="btn btn-primary">Visit Shop Now</div>
-        </div>
-        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-          <a href="#slide3" className="btn btn-circle btn-primary">
-            ❮
-          </a>
-          <a href="#slide1" className="btn btn-circle btn-primary">
-            ❯
-          </a>
-        </div>
+    <div
+      className="hero min-h-screen relative -top-24 z-0 rounded-3xl"
+      style={{
+        backgroundImage: `url("https://images.unsplash.com/photo-1558507334-57300f59f0bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YWN0aW9uJTIwZmlndXJlc3xlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80")`,
+      }}
+    >
+      <div className="hero-overlay bg-opacity-5 rounded-3xl"></div>
+      <div className="max-w-2xl relative -top-24 -left-24 space-y-5">
+        <h1 data-aos="fade-down" className="heading">
+          Welcome to <span className="heading2">Figuru</span>
+        </h1>
+        <p className="mb-5" data-aos="zoom-in">
+          Figuru your ultimate destination for superhero action figures and
+          collectibles. We are an online store dedicated to bringing you the
+          most incredible and authentic superhero figures from across the
+          universe. Whether you're a die-hard comic book fan, a movie
+          enthusiast, or a passionate collector, Figuru is here to fuel your
+          superhero obsession.
+        </p>
+
+        <a href="#actionFigures" className="btn rounded-lg" data-aos="zoom-in">
+          <button>
+            Get Your Toys
+          </button>
+        </a>
       </div>
     </div>
   );

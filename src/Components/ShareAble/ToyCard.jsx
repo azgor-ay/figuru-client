@@ -18,7 +18,12 @@ const ToyCard = ({ toy }) => {
     stock,
   } = toy;
   return (
-    <div className="card card-side bg-base-100 rounded-3xl shadow-lg">
+    <div
+      data-aos="flip-left"
+      data-aos-easing="ease-out-cubic"
+      data-aos-duration="2000"
+      className="card card-side bg-base-100 rounded-3xl shadow-lg"
+    >
       <img className="w-1/2 object-cover rounded-l-3xl" src={image} alt="Toy" />
       <div className="p-5 flex flex-col">
         <h2 className="card-title text-4xl pb-2 font-bold">{name}</h2>

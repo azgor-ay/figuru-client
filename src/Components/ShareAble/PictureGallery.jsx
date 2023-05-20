@@ -3,6 +3,7 @@ import PhotoAlbum from "react-photo-album";
 // import photos from "../../assets/Photos/Untitled-1.jpg";
 
 const PictureGallery = () => {
+    
     const photos = [
         {
             src : 'https://marveltoynews.com/wp-content/uploads/2014/07/MMS252-Rocket-Raccoon-Hot-Toys-Guardians-of-the-Galaxy-Figure-e1405695658312.jpg',

@@ -3,7 +3,8 @@ import { useForm } from "react-hook-form";
 import { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const UpdateToy = () => {
   const previousData = useLoaderData();
@@ -36,7 +37,7 @@ const UpdateToy = () => {
             showConfirmButton: false,
           });
         } else if (data.modifiedCount === 0) {
-             Swal.fire({
+          Swal.fire({
             title: "No Updated data Found",
             icon: "error",
             timer: 1000,
@@ -49,11 +50,25 @@ const UpdateToy = () => {
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="hero min-h-screen">
+        <div className="hero min-h-screen ">
           <div className="shadow-2xl w-full rounded-3xl">
-            <h1 className="text-5xl font-bold text-center">
-              Update your toy details
-            </h1>
+            <div className="flex items-center justify-between">
+              <Link to="/myToys">
+                <button className="btn ml-12">
+                  {" "}
+                  <FaArrowLeft className="inline mr-2" /> Back to My toys
+                </button>
+              </Link>
+              <h1 className="text-5xl font-bold pt-12 title ">
+                Update your toy details
+              </h1>
+              <Link to="/addToy">
+                <button className="btn mr-12">
+                  {" "}
+                  Add new toy <FaArrowRight className="inline ml-2" />
+                </button>
+              </Link>
+            </div>
             <div className="card-body p-12">
               <div className="grid lg:grid-cols-2 gap-x-6">
                 <div className="form-control">

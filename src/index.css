@@ -1,12 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 .title {
     font-family: 'Righteous', cursive;
 }
+
+.heading{
+    @apply text-6xl font-semibold 
+}
+
+.heading2{
+    @apply font-extrabold italic capitalize 
+}
+
 
 .subCategoryTitle {
    @apply text-5xl capitalize font-extrabold text-center py-5 mb-12 bg-clip-text text-transparent bg-gradient-to-br from-amber-500 to-amber-900 drop-shadow-md shadow-info-content
@@ -14,11 +23,11 @@
 
 /* Navlinks Buttons */
 .activeNav{
-    @apply btn mx-2 btn-primary
+    @apply mx-2 rounded-lg
 }
 
 .default{
-    @apply  mx-2
+    @apply  mx-2 
 }
 
 /* pagination buttons */

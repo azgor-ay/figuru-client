@@ -104,7 +104,7 @@ const MyToys = () => {
             onClick={(e) => {
               setSort(e.target.value);
             }}
-            className="input input-primary"
+            className="border px-5 py-2 rounded-3xl"
           >
             <option value="Low to High">Low to High</option>
             <option value="High to Low">High to Low</option>
