@@ -22,12 +22,24 @@ const MyToys = () => {
   const [dataChange, setDataChange] = useState(false);
 
   const [myToys, setMyToys] = useState([]);
+  const [sort, setSort] = useState("High to Low");
+  console.log(sort);
 
   useEffect(() => {
     fetch(`http://localhost:5000/actionFigures?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => setMyToys(data));
   }, [dataChange]);
+
+  useEffect(() => {
+    if (sort === "High to Low") {
+      const high = myToys.sort((a, b) => a.price - b.price);
+      setMyToys(high);
+    } else if (sort === "Low to High") {
+      const low = myToys.sort((a, b) => b.price - a.price);
+      setMyToys(low);
+    }
+  }, [sort]);
 
   const clearAllToys = () => {
     Swal.fire({
@@ -65,7 +77,6 @@ const MyToys = () => {
       cancelButtonText: "No",
     }).then((result) => {
       if (result.isConfirmed) {
-        console.log("ho paise");
         fetch(`http://localhost:5000/actionFigures/${id}`, {
           method: "DELETE",
         })
@@ -79,8 +90,13 @@ const MyToys = () => {
       }
     });
   };
+
   return (
     <div className="overflow-x-auto w-full">
+      {" "}
+      {/* <h1 className="text-6xl text-center py-6 font-extrabold">
+        All the toys you added to this website
+      </h1> */}
       <div className="flex justify-between items-center py-4">
         <Link to="/addToy">
           <button className="btn rounded-3xl">
@@ -89,9 +105,20 @@ const MyToys = () => {
             Add more toys
           </button>
         </Link>
-        <h1 className="text-5xl font-extrabold">
-          All the toys you added to this website
-        </h1>
+        <div className="">
+          <label className="text-xl">Sort By Price </label>
+          <select
+            name=""
+            id=""
+            onClick={(e) => {
+              setSort(e.target.value);
+            }}
+            className="input input-primary"
+          >
+            <option value="Low to High">Low to High</option>
+            <option value="High to Low">High to Low</option>
+          </select>
+        </div>
         <button onClick={clearAllToys} className="btn rounded-3xl">
           Clear All Toys <FaHandsWash className="ml-2" />
         </button>
@@ -112,51 +139,52 @@ const MyToys = () => {
         <tbody>
           {myToys.length > 0 ? (
             <>
-              {myToys.map((toy) => (
-                <tr key={toy._id}>
-                  <th></th>
-                  <td>
-                    <div className="flex items-center space-x-3">
-                      <div className="avatar">
-                        <div className="mask mask-squircle w-12 h-12">
-                          <img
-                            src={toy.image}
-                            alt="Avatar Tailwind CSS Component"
-                          />
+              {sort &&
+                myToys.map((toy) => (
+                  <tr key={toy._id}>
+                    <th></th>
+                    <td>
+                      <div className="flex items-center space-x-3">
+                        <div className="avatar">
+                          <div className="mask mask-squircle w-12 h-12">
+                            <img
+                              src={toy.image}
+                              alt="Avatar Tailwind CSS Component"
+                            />
+                          </div>
+                        </div>
+                        <div>
+                          <div className="font-bold">{toy.name}</div>
+                          <div className="text-sm opacity-50">
+                            {toy.subCategory}
+                          </div>
                         </div>
                       </div>
-                      <div>
-                        <div className="font-bold">{toy.name}</div>
-                        <div className="text-sm opacity-50">
-                          {toy.subCategory}
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    {toy.sellerName}
-                    <br />
-                    <span className="badge badge-ghost badge-sm">
-                      {toy.email}
-                    </span>
-                  </td>
-                  <td className="flex items-center justify-start">
-                    <FaPhone className="mr-3 text-xs" /> {toy.phone}
-                  </td>
-                  <td className="">
-                    <FaBoxOpen className="inline mb-1 mr-3" />
-                    {toy.stock}
-                  </td>
-                  <td>${toy.price}</td>
-                  <th className="flex justify-evenly items-center">
-                    <FaEdit className="text-3xl " />
-                    <FaTrash
-                      onClick={() => handleDelete(toy._id)}
-                      className="text-5xl hover:bg-gray-200 cursor-pointer duration-200 rounded-full px-2 py-3"
-                    />
-                  </th>
-                </tr>
-              ))}
+                    </td>
+                    <td>
+                      {toy.sellerName}
+                      <br />
+                      <span className="badge badge-ghost badge-sm">
+                        {toy.email}
+                      </span>
+                    </td>
+                    <td className="flex items-center justify-start">
+                      <FaPhone className="mr-3 text-xs" /> {toy.phone}
+                    </td>
+                    <td className="">
+                      <FaBoxOpen className="inline mb-1 mr-3" />
+                      {toy.stock}
+                    </td>
+                    <td>${toy.price}</td>
+                    <th className="flex justify-evenly items-center">
+                      <FaEdit className="text-3xl " />
+                      <FaTrash
+                        onClick={() => handleDelete(toy._id)}
+                        className="text-5xl hover:bg-gray-200 cursor-pointer duration-200 rounded-full px-2 py-3"
+                      />
+                    </th>
+                  </tr>
+                ))}
             </>
           ) : (
             <tr>
