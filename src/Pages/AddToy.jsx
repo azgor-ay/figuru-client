@@ -4,7 +4,8 @@ import { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider";
 export default function AddToy() {
-  const { user } = useContext(AuthContext);
+  const { user, newToyAdded, setNewToyAdded } = useContext(AuthContext);
+  console.log(newToyAdded);
   const {
     register,
     handleSubmit,
@@ -31,6 +32,7 @@ export default function AddToy() {
             timer: 1000,
             showConfirmButton: false,
           });
+          setNewToyAdded(!newToyAdded)
         }
       });
   };

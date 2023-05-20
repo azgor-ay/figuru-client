@@ -1,9 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import ToyCard from "../ShareAble/ToyCard";
+import { AuthContext } from "../../AuthProvider";
 
 const ActionFigures = () => {
+  const {newToyAdded} = useContext(AuthContext)
+  console.log(newToyAdded);
   const [subCategories, setSubCategories] = useState([])
   useEffect(()=>{
     fetch(`http://localhost:5000/categories`)
@@ -11,18 +14,16 @@ const ActionFigures = () => {
     .then(data => setSubCategories(data))
   }, [])
 
-  // Marvel Sub Category
+  // Something Like a shop section but with sub categories
   const [toys, setToys] = useState([]);
   const [category, setCategory] = useState("Marvel");
-  console.log(category, toys);
-  console.log(category);
   useEffect(() => {
     fetch(`http://localhost:5000/actionFigures?subCategory=${category}`)
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
       });
-  }, [category]);
+  }, [category, newToyAdded]);
 
   return (
     <div className="p-12">

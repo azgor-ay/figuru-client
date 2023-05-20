@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import {
-    GoogleAuthProvider,
+  GoogleAuthProvider,
   createUserWithEmailAndPassword,
   getAuth,
   onAuthStateChanged,
@@ -16,6 +16,8 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [newToyAdded, setNewToyAdded] = useState(true);
+  console.log(newToyAdded);
 
   const registerUser = (email, password) => {
     setLoading(true);
@@ -28,15 +30,15 @@ const AuthProvider = ({ children }) => {
   };
 
   const logOut = () => {
-    setLoading(true)
-    return signOut(auth)
-  }
+    setLoading(true);
+    return signOut(auth);
+  };
 
-  const googleProvider = new GoogleAuthProvider()
+  const googleProvider = new GoogleAuthProvider();
   const signInWithGoogle = () => {
-    setLoading(true)
-    return signInWithPopup(auth, googleProvider)
-  }
+    setLoading(true);
+    return signInWithPopup(auth, googleProvider);
+  };
   useEffect(() => {
     const unsubscribe = () =>
       onAuthStateChanged(auth, (loggedInUser) => {
@@ -52,7 +54,9 @@ const AuthProvider = ({ children }) => {
     login,
     registerUser,
     logOut,
-    signInWithGoogle
+    signInWithGoogle,
+    newToyAdded,
+    setNewToyAdded,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

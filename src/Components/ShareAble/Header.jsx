@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import logo from "../../../public/Logo.webp";
 import { AuthContext } from "../../AuthProvider";
 import { Tooltip } from "react-tooltip";
@@ -7,11 +7,13 @@ const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   console.log(user);
   const navigate = useNavigate();
+  const location = useLocation()
+  console.log(location);
 
   const handleLogOut = () => {
     logOut()
       .then((result) => {
-        navigate("/");
+        navigate(location?.pathname);
       })
       .catch((error) => {
         console.log(error.message);

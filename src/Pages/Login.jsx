@@ -1,27 +1,40 @@
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import img from "../assets/Login/groot.jpg";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider";
 export default function Login() {
   const { login, signInWithGoogle } = useContext(AuthContext);
   const [showPass, setShowPass] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state?.from?.pathname || "/";
+
+  const [wrongPassMSG, setWrongPassMSG] = useState(" ");
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
+    setWrongPassMSG(" ");
     const { email, password } = data;
     login(email, password)
       .then((result) => {
         console.log(result.user);
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error.message);
+        if (
+          password.length > 0 &&
+          error.message === "Firebase: Error (auth/wrong-password)."
+        );
+        else if (password.length < 0) {
+          setWrongPassMSG(" ");
+        }
+        setWrongPassMSG("Wrong Password");
       });
   };
 
@@ -29,7 +42,7 @@ export default function Login() {
     signInWithGoogle()
       .then((result) => {
         console.log(result.user);
-        navigate("/");
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error.message);
@@ -69,9 +82,16 @@ export default function Login() {
                   className="input input-bordered relative"
                   {...register("password", { required: true })}
                 />
+                {wrongPassMSG.length > 1 && (
+                  <span className="static text-xs text-error font-bold">
+                    {wrongPassMSG}
+                  </span>
+                )}
                 <div
                   onClick={() => setShowPass(!showPass)}
-                  className="relative w-4 left-64 lg:left-72 bottom-8 cursor-pointer"
+                  className={`relative w-4 left-64 lg:left-72 ${
+                    wrongPassMSG.length > 1 ? "bottom-12" : "bottom-6"
+                  }  cursor-pointer`}
                 >
                   {showPass ? (
                     <FaEye className="" />
