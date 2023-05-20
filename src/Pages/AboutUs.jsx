@@ -5,33 +5,41 @@ const AboutUs = () => {
     <div>
       {/* About Banner */}
       <div
-        className="hero min-h-screen"
+        className="hero min-h-screen relative -top-24 rounded-3xl"
         style={{
-          backgroundImage: `url("https://www.comicbasics.com/wp-content/uploads/2020/08/The-Top-10-Greatest-Superheroes-Without-Superpowers-In-Comics-Today.jpg")`,
+          backgroundImage: `url("https://images.unsplash.com/photo-1608889825103-eb5ed706fc64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80")`,
         }}
       >
-        <div className="hero-overlay bg-opacity-60"></div>
+        <div className="hero-overlay bg-opacity-30 rounded-3xl"></div>
         <div className="hero-content text-center text-neutral-content">
-          <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold">About Figuru</h1>
-            <p className="mb-5">
+          <div className="max-w-lg">
+            <h1 data-aos="fade-down" data-aos-duration="2000" className="mb-5 text-5xl font-bold">
+              About Figuru
+            </h1>
+            <p className="mb-5" data-aos="fade-down"data-aos-duration="2000">
               At Figuru, we believe in the power of superheroes. They inspire
               us, ignite our imaginations, and remind us of the extraordinary
               potential within each of us. We are passionate about bringing
               these iconic characters to life through meticulously crafted and
               highly detailed figures.
             </p>
-            <button className="btn btn-primary">Visit Shop</button>
+            <a href="#community" data-aos="fade-down"data-aos-duration="2000">
+              <button className="btn btn-primary">Join Community</button>
+            </a>
           </div>
         </div>
       </div>
 
       {/* Our Mission */}
-
       <div className="pt-16">
         <div className="flex flex-col items-center justify-between lg:flex-row">
-          <img src={batman} className="max-w-sm w-1/2 mx-auto" />
-          <div className="w-1/2">
+          <img
+            src={batman}
+            className="max-w-sm w-1/2 mx-auto"
+            data-aos="fade-right"
+            data-aos-duration="2000"
+          />
+          <div className="w-1/2" data-aos="fade-left" data-aos-duration="2000">
             <h1 className="text-5xl font-bold">Our Mission</h1>
             <p className="py-6 pr-48">
               Our mission is to create an immersive experience for superhero
@@ -50,11 +58,17 @@ const AboutUs = () => {
       <div className="py-14">
         <div className="flex flex-col items-center lg:flex-row-reverse">
           <img
+            data-aos="fade-left"
+            data-aos-duration="2000"
             src="https://s3b.cashify.in/gpro/uploads/2022/09/15120606/Best-3D-Printers-In-India.jpg"
             alt="3d printer"
             className="w-1/2 rounded-lg"
           />
-          <div className="text-right mx-10">
+          <div
+            className="text-right mx-10"
+            data-aos="fade-down-right"
+            data-aos-duration="2000"
+          >
             <h1 className="text-5xl font-bold">Quality and Craftsmanship</h1>
             <p className="py-3">
               We understand that true fans appreciate the importance of quality.
@@ -72,25 +86,26 @@ const AboutUs = () => {
 
       {/* Community */}
       <div
-        className="hero min-h-screen"
+        id="community"
+        className="hero min-h-screen rounded-t-3xl"
         style={{
-          backgroundImage: `url("https://altrincham.todaynews.co.uk/wp-content/uploads/sites/7/elementor/thumbs/superheroessale-1-ox5jd9d3vw1tritln1t7tiy0d3t1zd8dgoczupgyeg.jpg")`,
+          backgroundImage: `url("https://images.unsplash.com/photo-1559107503-521c2b36b98d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80")`,
         }}
       >
-        <div className="hero-overlay bg-opacity-60"></div>
+        <div className="hero-overlay bg-opacity-60 rounded-t-3xl"></div>
         <div className="hero-content text-center text-neutral-content">
-          <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold">
+          <div className="max-w-3xl">
+            <h1 className="mb-5 text-5xl font-bold" data-aos="fade-up">
               Join the Figuru Community
             </h1>
-            <p className="mb-5">
+            <p className="mb-5" data-aos="fade-up">
               We invite you to join our vibrant community of superhero
               enthusiasts. Connect with fellow fans, share your collection, and
               stay updated on the latest releases, exclusive offers, and
               exciting events. Follow us on social media and sign up for our
               newsletter to be part of the Figuru family.
             </p>
-            <button className="btn btn-primary">Join Community</button>
+            <button className="btn btn-primary" data-aos="fade-up">Join Community</button>
           </div>
         </div>
       </div>
