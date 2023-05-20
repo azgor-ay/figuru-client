@@ -6,7 +6,6 @@ import { AuthContext } from "../../AuthProvider";
 
 const ActionFigures = () => {
   const {newToyAdded} = useContext(AuthContext)
-  console.log(newToyAdded);
   const [subCategories, setSubCategories] = useState([])
   useEffect(()=>{
     fetch(`http://localhost:5000/categories`)
@@ -46,12 +45,12 @@ const ActionFigures = () => {
             <Tab onClick={() => setCategory(ctg.category)} key={ctg._id}>
               {ctg.category}
             </Tab>
-          ))}
+          ))} 
         </TabList>
 
         {/* Sub Category of Action Figures */}
-        <TabPanel>
           {/* Marvel */}
+        <TabPanel>
           <h2 className="subCategoryTitle">World Class MCU Super Heros</h2>
           <div className="grid md:grid-cols-2 gap-10">
             {toys.map((toy) => (
@@ -59,8 +58,8 @@ const ActionFigures = () => {
           ))}
           </div>
         </TabPanel>
-        <TabPanel>
           {/* DC */}
+        <TabPanel>
           <h2 className="subCategoryTitle">World Class DCU Super Heros</h2>
           <div className="grid md:grid-cols-2 gap-10">
             {toys.map((toy) => (
@@ -68,8 +67,8 @@ const ActionFigures = () => {
           ))}
           </div>
         </TabPanel>
-        <TabPanel>
           {/* The Boys */}
+        <TabPanel>
           <h2 className="subCategoryTitle">World Class Conflicted Super Humans</h2>
           <div className="grid md:grid-cols-2 gap-10">
             {toys.map((toy) => (
@@ -77,8 +76,8 @@ const ActionFigures = () => {
           ))}
           </div>
         </TabPanel>
-        <TabPanel>
           {/* Transformers */}
+        <TabPanel>
           <h2 className="subCategoryTitle">Transformers Earth Saviors</h2>
           <div className="grid md:grid-cols-2 gap-10">
             {toys.map((toy) => (
@@ -86,8 +85,8 @@ const ActionFigures = () => {
           ))}
           </div>
         </TabPanel>
-        <TabPanel>
           {/* Indian */}
+        <TabPanel>
           <h2 className="subCategoryTitle">Indian Desi Super Heros</h2>
           <div className="grid md:grid-cols-2 gap-10">
             {toys.map((toy) => (

@@ -13,3 +13,11 @@
 }
 
 
+/* pagination buttons */
+.active{
+    @apply btn btn-circle mx-2
+}
+
+.normal{
+     @apply btn btn-circle btn-outline mx-2
+}

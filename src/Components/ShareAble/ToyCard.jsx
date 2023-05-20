@@ -50,7 +50,7 @@ const ToyCard = ({ toy }) => {
           Seller: <span className="title font-extralight">{sellerName}</span>
         </p>
         <p className="text-xl pb-5 text-green-700">
-          <FaBoxOpen className="inline" /> In Stock : {stock}
+          <FaBoxOpen className="inline" /> <span>In Stock : {stock}</span>
         </p>
         <h3 className="text-amber-600 text-2xl">
           Price: <span>${price}</span>

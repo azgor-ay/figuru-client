@@ -7,7 +7,6 @@ import { FaBoxOpen } from "react-icons/fa";
 
 const ToyDetails = () => {
   const singleToy = useLoaderData();
-  console.log(singleToy);
   const {
     _id,
     image,
@@ -19,7 +18,6 @@ const ToyDetails = () => {
     sellerName,
     stock,
   } = singleToy[0];
-  console.log(name);
   return (
     <div className="hero min-h-fit shadow-2xl my-5 rounded-xl pb-8">
       <div className="hero-content flex-col lg:flex-row-reverse">

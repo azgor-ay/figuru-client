@@ -18,7 +18,6 @@ export default function Register() {
     const { email, password } = data;
     registerUser(email, password)
       .then((result) => {
-        console.log(result.user);
         navigate("/");
       })
       .catch((error) => {
@@ -28,7 +27,6 @@ export default function Register() {
   const handleAuthenticateWithGoogle = () => {
     signInWithGoogle()
       .then((result) => {
-        console.log(result.user);
         navigate("/");
       })
       .catch((error) => {

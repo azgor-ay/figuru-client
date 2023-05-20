@@ -5,10 +5,8 @@ import { AuthContext } from "../../AuthProvider";
 import { Tooltip } from "react-tooltip";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
-  console.log(user);
   const navigate = useNavigate();
   const location = useLocation()
-  console.log(location);
 
   const handleLogOut = () => {
     logOut()

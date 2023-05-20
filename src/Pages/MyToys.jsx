@@ -18,12 +18,10 @@ import Swal from "sweetalert2";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
-  console.log(user.email);
   const [dataChange, setDataChange] = useState(false);
 
   const [myToys, setMyToys] = useState([]);
   const [sort, setSort] = useState("High to Low");
-  console.log(sort);
 
   useEffect(() => {
     fetch(`http://localhost:5000/actionFigures?email=${user?.email}`)
@@ -49,7 +47,7 @@ const MyToys = () => {
       confirmButtonColor: "black",
       cancelButtonColor: "#858585",
       showCancelButton: true,
-      cancelButtonText: "No",
+      cancelButtonText: "Cancel",
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(`http://localhost:5000/actionFigures?email=${user?.email}`, {
@@ -66,7 +64,6 @@ const MyToys = () => {
   };
 
   const handleDelete = (id) => {
-    console.log(id);
     Swal.fire({
       title: "Do you really want to Delete",
       text: "Be sure there is no undo or recycle bin",
@@ -82,7 +79,6 @@ const MyToys = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             if (data.deletedCount > 0) {
               setDataChange(!dataChange);
             }

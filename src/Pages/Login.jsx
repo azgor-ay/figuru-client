@@ -22,7 +22,6 @@ export default function Login() {
     const { email, password } = data;
     login(email, password)
       .then((result) => {
-        console.log(result.user);
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -41,7 +40,6 @@ export default function Login() {
   const handleAuthenticateWithGoogle = () => {
     signInWithGoogle()
       .then((result) => {
-        console.log(result.user);
         navigate(from, { replace: true });
       })
       .catch((error) => {

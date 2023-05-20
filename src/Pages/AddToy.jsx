@@ -5,7 +5,6 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider";
 export default function AddToy() {
   const { user, newToyAdded, setNewToyAdded } = useContext(AuthContext);
-  console.log(newToyAdded);
   const {
     register,
     handleSubmit,
@@ -13,7 +12,6 @@ export default function AddToy() {
   } = useForm();
 
   const onSubmit = (newToy) => {
-    console.log(newToy);
 
     fetch(`http://localhost:5000/actionFigures`, {
       method: "POST",
@@ -24,7 +22,6 @@ export default function AddToy() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.insertedId) {
           Swal.fire({
             title: "Toy Added",

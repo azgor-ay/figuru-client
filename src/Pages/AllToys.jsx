@@ -2,19 +2,31 @@ import React, { useContext, useEffect, useState } from "react";
 import { FaBoxOpen, FaEdit, FaPhone, FaSearch, FaTrash } from "react-icons/fa";
 import { AuthContext } from "../AuthProvider";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 const AllToys = () => {
   const { loading } = useContext(AuthContext);
   const [allToys, setAllToys] = useState([]);
   const navigate = useNavigate();
   const [searchText, setSearchText] = useState("");
+  const { totalToys } = useLoaderData();
 
+  const [toyPerPage, setToyPerPage] = useState(20);
+  const totalPages = Math.ceil(totalToys / toyPerPage);
+  const pageNumbers = [...Array(totalPages).keys()];
+  const [currentPage, setCurrentPage] = useState(0);
+
+  const options = [20, 40, 50];
+
+  const handleToyPerPage = (event) => {
+    setToyPerPage(parseInt(event.target.value));
+    setCurrentPage(0);
+  };
   useEffect(() => {
-    fetch(`http://localhost:5000/actionFigures`)
+    fetch(`http://localhost:5000/allToys?page=${currentPage}&limit=${toyPerPage}`)
       .then((res) => res.json())
       .then((data) => setAllToys(data));
-  }, []);
+  }, [currentPage, toyPerPage]);
 
   if (loading) {
     return "Loading";
@@ -55,9 +67,7 @@ const AllToys = () => {
                 if (searchText == "") {
                   return toy;
                 } else if (
-                  toy?.name
-                    ?.toLowerCase()
-                    .includes(searchText.toLowerCase())
+                  toy?.name?.toLowerCase().includes(searchText.toLowerCase())
                 ) {
                   return toy;
                 }
@@ -138,6 +148,19 @@ const AllToys = () => {
             </tr>
           </tfoot>
         </table>
+        {/* Pagination */}
+        <div className="text-center p-6">
+          Pages
+          {pageNumbers.map((pg) => (
+            <button
+              className={currentPage === pg ? "active" : "normal"}
+              key={pg}
+              onClick={() => setCurrentPage(pg)}
+            >
+              {pg}
+            </button>
+          ))}
+        </div>
       </div>
     );
   }
