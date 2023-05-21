@@ -8,7 +8,7 @@ const ActionFigures = () => {
   const { newToyAdded } = useContext(AuthContext);
   const [subCategories, setSubCategories] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/categories`)
+    fetch(`https://figuru.vercel.app/categories`)
       .then((res) => res.json())
       .then((data) => setSubCategories(data));
   }, []);
@@ -17,7 +17,7 @@ const ActionFigures = () => {
   const [toys, setToys] = useState([]);
   const [category, setCategory] = useState("DC");
   useEffect(() => {
-    fetch(`http://localhost:5000/actionFigures?subCategory=${category}`)
+    fetch(`https://figuru.vercel.app/actionFigures?subCategory=${category}`)
       .then((res) => res.json())
       .then((data) => {
         setToys(data);

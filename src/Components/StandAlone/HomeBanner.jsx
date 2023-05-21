@@ -15,7 +15,7 @@ const HomeBanner = () => {
           Welcome to <span className="heading2">Figuru</span>
         </h1>
         <p className="mb-5" data-aos="zoom-in">
-          Figuru your ultimate destination for superhero action figures and
+          Figuru is your ultimate destination for superhero action figures and
           collectibles. We are an online store dedicated to bringing you the
           most incredible and authentic superhero figures from across the
           universe. Whether you're a die-hard comic book fan, a movie

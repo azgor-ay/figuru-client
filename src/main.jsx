@@ -44,12 +44,12 @@ const router = createBrowserRouter([
       {
         path: "/singleToyDetails/:id",
         element: <AuthRequired><ToyDetails></ToyDetails></AuthRequired>,
-        loader : ({params}) => fetch(`http://localhost:5000/actionFigures?id=${params.id}`)
+        loader : ({params}) => fetch(`https://figuru.vercel.app/actionFigures?id=${params.id}`)
       },
       {
         path: "/allToys",
         element: <AllToys></AllToys>,
-        loader: ()=> fetch(`http://localhost:5000/totalActionFigures`)
+        loader: ()=> fetch(`https://figuru.vercel.app/totalActionFigures`)
       },
       {
         path: "/myToys",
@@ -62,7 +62,7 @@ const router = createBrowserRouter([
       {
         path: "/updateToy/:id",
         element: <AuthRequired><UpdateToy></UpdateToy></AuthRequired>,
-        loader: ({params}) =>  fetch(`http://localhost:5000/actionFigures?id=${params.id}`)
+        loader: ({params}) =>  fetch(`https://figuru.vercel.app/actionFigures?id=${params.id}`)
       },
     ],
   },

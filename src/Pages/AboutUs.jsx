@@ -31,7 +31,7 @@ const AboutUs = () => {
       </div>
 
       {/* Our Mission */}
-      <div className="pt-16">
+      <div className="py-16">
         <div className="flex flex-col items-center justify-between lg:flex-row">
           <img
             src={batman}
@@ -55,7 +55,7 @@ const AboutUs = () => {
       </div>
 
       {/* Quality and Craft Man Ship */}
-      <div className="py-14">
+      <div className="py-24">
         <div className="flex flex-col items-center lg:flex-row-reverse">
           <img
             data-aos="fade-left"
@@ -66,8 +66,8 @@ const AboutUs = () => {
           />
           <div
             className="text-right mx-10"
-            data-aos="fade-down-right"
-            data-aos-duration="2000"
+            data-aos="fade-up-right"
+            data-aos-duration="4000"
           >
             <h1 className="text-5xl font-bold">Quality and Craftsmanship</h1>
             <p className="py-3">
@@ -95,17 +95,17 @@ const AboutUs = () => {
         <div className="hero-overlay bg-opacity-60 rounded-t-3xl"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-3xl">
-            <h1 className="mb-5 text-5xl font-bold" data-aos="fade-up">
+            <h1 className="mb-5 text-5xl font-bold" data-aos="fade-up"data-aos-duration="4000">
               Join the Figuru Community
             </h1>
-            <p className="mb-5" data-aos="fade-up">
+            <p className="mb-5" data-aos="fade-up"data-aos-duration="4000">
               We invite you to join our vibrant community of superhero
               enthusiasts. Connect with fellow fans, share your collection, and
               stay updated on the latest releases, exclusive offers, and
               exciting events. Follow us on social media and sign up for our
               newsletter to be part of the Figuru family.
             </p>
-            <button className="btn btn-primary" data-aos="fade-up">Join Community</button>
+            <button className="btn btn-primary" data-aos="fade-up"data-aos-duration="4000">Join Community</button>
           </div>
         </div>
       </div>

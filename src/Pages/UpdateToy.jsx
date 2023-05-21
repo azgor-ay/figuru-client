@@ -19,7 +19,7 @@ const UpdateToy = () => {
 
   const onSubmit = (newToy) => {
     console.log(newToy);
-    fetch(`http://localhost:5000/actionFigures/${_id}`, {
+    fetch(`https://figuru.vercel.app/actionFigures/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

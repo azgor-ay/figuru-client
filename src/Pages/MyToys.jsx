@@ -19,7 +19,7 @@ const MyToys = () => {
   const [sort, setSort] = useState("High to Low");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/actionFigures?email=${user?.email}`)
+    fetch(`https://figuru.vercel.app/actionFigures?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => setMyToys(data));
   }, [dataChange]);
@@ -45,7 +45,7 @@ const MyToys = () => {
       cancelButtonText: "Cancel",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/actionFigures?email=${user?.email}`, {
+        fetch(`https://figuru.vercel.app/actionFigures?email=${user?.email}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -69,7 +69,7 @@ const MyToys = () => {
       cancelButtonText: "No",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/actionFigures/${id}`, {
+        fetch(`https://figuru.vercel.app/actionFigures/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

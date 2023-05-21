@@ -13,7 +13,7 @@ export default function AddToy() {
 
   const onSubmit = (newToy) => {
 
-    fetch(`http://localhost:5000/actionFigures`, {
+    fetch(`https://figuru.vercel.app/actionFigures`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -37,7 +37,7 @@ export default function AddToy() {
   const [subCategories, setSubCategories] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/categories`)
+    fetch(`https://figuru.vercel.app/categories`)
       .then((res) => res.json())
       .then((data) => setSubCategories(data));
   }, []);

@@ -16,7 +16,7 @@ const AllToys = () => {
   const pageNumbers = [...Array(totalPages).keys()];
   const [currentPage, setCurrentPage] = useState(0);
 
-  const options = [20, 40, 50];
+  const options = [5, 10, 20];
 
   const handleToyPerPage = (event) => {
     setToyPerPage(parseInt(event.target.value));
@@ -24,11 +24,18 @@ const AllToys = () => {
   };
   useEffect(() => {
     fetch(
-      `http://localhost:5000/allToys?page=${currentPage}&limit=${toyPerPage}`
+      `https://figuru.vercel.app/allToys?page=${currentPage}&limit=${toyPerPage}`
     )
       .then((res) => res.json())
-      .then((data) => setAllToys(data));
+      .then((data) => {
+        setAllToys(data);
+      });
   }, [currentPage, toyPerPage]);
+
+  const sl = [];
+  for (let i = 1; i <= allToys?.length; i++) {
+    sl.push(i);
+  }
 
   if (loading) {
     return "Loading";
@@ -36,7 +43,14 @@ const AllToys = () => {
     return (
       <div className="overflow-x-auto w-full">
         <div className="flex items-center justify-center">
-          <h1 className="title text-5xl">All the products this website has</h1>
+          <h1
+            className="title text-5xl"
+            data-aos="fade-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="4000"
+          >
+            All the products this website has
+          </h1>
           <div className="text-center py-6">
             <label className="text-xl relative left-24 border-r pt-2 py-3 pr-3 ">
               Search
@@ -57,7 +71,7 @@ const AllToys = () => {
         <table className="table w-full">
           <thead>
             <tr>
-              <th></th>
+              <th>SL No</th>
               <th>Toy/Action Figure</th>
               <th>Seller</th>
               <th>phone</th>
@@ -79,7 +93,12 @@ const AllToys = () => {
               })
               .map((toy) => (
                 <tr key={toy._id}>
-                  <th></th>
+                  <th>
+                  {sl.map((slNumber) => (
+                      console.log(slNumber)
+                      // <span>{slNumber}</span>
+                    ))}
+                  </th>
                   <td>
                     <div className="flex items-center space-x-3">
                       <div className="avatar">
@@ -143,7 +162,7 @@ const AllToys = () => {
           {/* foot */}
           <tfoot>
             <tr>
-              <th></th>
+              <th>SL No</th>
               <th>Toy/Action Figure</th>
               <th>Seller</th>
               <th>Phone</th>
@@ -156,14 +175,30 @@ const AllToys = () => {
 
         {/* Pagination */}
         <div className="text-center p-6">
-          Pages
+          <div className="flex justify-center items-center py-3">
+            <p className="text-xl uppercase">
+              page {currentPage + 1} of {totalPages} pages
+            </p>
+            <select
+              value={toyPerPage}
+              onChange={handleToyPerPage}
+              className="border ml-5 mr-2 px-2 py-1 rounded-3xl"
+            >
+              {options.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+            <span>Toys Per Page</span>
+          </div>
           {pageNumbers.map((pg) => (
             <button
               className={currentPage === pg ? "active" : "normal"}
               key={pg}
               onClick={() => setCurrentPage(pg)}
             >
-              {pg}
+              {pg + 1}
             </button>
           ))}
         </div>
