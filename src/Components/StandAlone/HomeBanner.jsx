@@ -1,12 +1,11 @@
-import React, { useRef } from "react";
+import React from "react";
 
-const   HomeBanner = () => {
-
+const HomeBanner = () => {
   return (
     <div
       className="hero min-h-screen relative -top-24 z-0 rounded-3xl"
       style={{
-        backgroundImage: `url("https://images.unsplash.com/photo-1558507334-57300f59f0bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YWN0aW9uJTIwZmlndXJlc3xlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80")`,
+        backgroundImage: `url("https://i.ibb.co/z8gtnq9/home.jpg")`,
       }}
     >
       <div className="hero-overlay bg-opacity-5 rounded-3xl"></div>
@@ -24,9 +23,7 @@ const   HomeBanner = () => {
         </p>
 
         <a href="#actionFigures" className="btn rounded-lg" data-aos="zoom-in">
-          <button>
-            Get Your Toys
-          </button>
+          <button>Get Your Toys</button>
         </a>
       </div>
     </div>

@@ -46,7 +46,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        element: <UsersProfile></UsersProfile>,
+        element: <AuthRequired><UsersProfile></UsersProfile></AuthRequired>,
       },
       {
         path: "/singleToyDetails/:id",

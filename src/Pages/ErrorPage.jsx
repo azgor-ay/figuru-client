@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 const ErrorPage = () => {
   return (
     <div>
-      <img className="w-full relative -top-48" src={gif} alt="" />
-      <div className="absolute top-[150px] left-[450px] text-center">
+      <img className="w-full relative lg:-top-48" src={gif} alt="" />
+      <div className="absolute lg:top-[150px] lg:left-[430px] text-center">
         <h1 className=" font-extrabold leading-loose">
           <span className="uppercase text-5xl">oops!</span> <br />
           <span className="text-2xl">
@@ -13,7 +13,7 @@ const ErrorPage = () => {
           </span>
         </h1>
         <Link to='/'>
-          <button className="mt-96 btn rounded-3xl hover:scale-105 hover:drop-shadow-xl duration-500">
+          <button className="lg:mt-96 btn rounded-3xl hover:scale-105 hover:drop-shadow-xl duration-500">
             Back to home
           </button>
         </Link>

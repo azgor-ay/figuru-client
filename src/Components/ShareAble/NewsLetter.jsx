@@ -7,9 +7,9 @@ const NewsLetter = () => {
         data-aos="fade-up"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="2000"
-        className="lg:h-1/2 lg:object-cover hidden lg:block"
-        src="https://images.unsplash.com/photo-1558679908-541bcf1249ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80"
-        alt=""
+        className="lg:h-1/2 lg:w-1/3 lg:object-cover hidden lg:block"
+        src="https://i.ibb.co/5YTmbzX/newsletter.png"
+        alt="super man"
       />
       <div className="p-2 lg:p-12 space-y-5 lg:space-y-10">
         <h6 className="title text-red-600 pt-12 lg:pt-0">Subscribe to Our Newsletter!</h6>

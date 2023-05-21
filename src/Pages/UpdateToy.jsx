@@ -5,10 +5,11 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import useTitle from "../customHooks/useTitle";
 
 const UpdateToy = () => {
+  useTitle('Update Toy Data')
   const previousData = useLoaderData();
-  console.log(previousData);
   const { _id, image, name, price, rating, reviews, stock } = previousData[0];
 
   const {
@@ -18,7 +19,6 @@ const UpdateToy = () => {
   } = useForm();
 
   const onSubmit = (newToy) => {
-    console.log(newToy);
     fetch(`https://figuru.vercel.app/actionFigures/${_id}`, {
       method: "PUT",
       headers: {
@@ -28,7 +28,6 @@ const UpdateToy = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.modifiedCount > 0) {
           Swal.fire({
             title: "Toy Updated",

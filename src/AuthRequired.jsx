@@ -7,7 +7,7 @@ const AuthRequired = ({ children }) => {
   const location = useLocation()
   
   if (loading) {
-    return <h1>Loading</h1>;
+    return <progress className="progress progress-primary w-56" value="70" max="100"></progress>;
   } else if (user) {
     return children;
   } else {

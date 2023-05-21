@@ -1,14 +1,16 @@
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
-import img from "../assets/Login/groot.jpg";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider";
-export default function Register() {
+import useTitle from "../customHooks/useTitle";
+const Register = () => {
+  useTitle('Register')
   const { registerUser, signInWithGoogle } = useContext(AuthContext);
   const navigate = useNavigate();
   const [showPass, setShowPass] = useState(false);
   const [showConPass, setShowConPass] = useState(false);
+  const [passNotMatch, setPassNotMatch] = useState('')
   const {
     register,
     handleSubmit,
@@ -16,6 +18,12 @@ export default function Register() {
   } = useForm();
   const onSubmit = (data) => {
     const { email, password } = data;
+    console.log(data);
+    if(password !== confirmPassword){
+      setPassNotMatch("Password Didn't match")
+      return
+    }
+    else if(password === confirmPassword){
     registerUser(email, password)
       .then((result) => {
         navigate("/");
@@ -23,6 +31,8 @@ export default function Register() {
       .catch((error) => {
         console.log(error.message);
       });
+    }
+
   };
   const handleAuthenticateWithGoogle = () => {
     signInWithGoogle()
@@ -38,10 +48,18 @@ export default function Register() {
       <div className="hero min-h-screen">
         <div className="hero-content flex-col items-center lg:flex-row">
           <div className="text-center w-1/2 lg:text-left lg:mr-32">
-            <img className="w-96 object-cover" src={img} alt="" />
+            <img className="w-96 object-cover" src="https://i.ibb.co/yy9QLRM/groot.jpg" alt="" 
+            data-aos="fade-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000"
+            />
           </div>
           <div className="card flex-shrink-0 max-w-sm shadow-2xl bg-base-100 w-full md:w-1/2">
-            <h1 className="text-5xl font-bold text-center">Register now!</h1>
+            <h1 className="text-5xl font-bold text-center"
+            data-aos="fade-down"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000"
+            >Register now!</h1>
             <div className="card-body">
               <div className="form-control">
                 <label className="label">
@@ -161,4 +179,6 @@ export default function Register() {
       </div>
     </form>
   );
-}
+};
+
+export default Register;

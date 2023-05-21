@@ -1,10 +1,9 @@
 import React from "react";
-import logo from '../../assets/logo/LogoWhite.webp'
 const Footer = () => {
   return (
     <footer className="footer footer-center p-10 bg-primary text-primary-content">
       <div>
-        <img className="w-28 -mb-1" src={logo} alt="" />
+        <img className="w-28 -mb-1" src="https://i.ibb.co/KWJ4NVp/Logo-White.png" alt="" />
         <p className="font-bold">
           Figuru Toy Industries Ltd. <br />
           Providing awesome actions figure since 2023

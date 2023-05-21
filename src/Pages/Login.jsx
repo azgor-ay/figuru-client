@@ -1,10 +1,11 @@
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
-import img from "../assets/Login/groot.jpg";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider";
-export default function Login() {
+import useTitle from "../customHooks/useTitle";
+const Login = () => {
+  useTitle('Login')
   const { login, signInWithGoogle, setUser } = useContext(AuthContext);
   const [showPass, setShowPass] = useState(false);
   const navigate = useNavigate();
@@ -45,7 +46,6 @@ export default function Login() {
     signInWithGoogle()
       .then((result) => {
         setUser(result.user);
-        console.log(result.user);
         navigate(from, { replace: true });
       })
       .catch((error) => {
@@ -63,7 +63,7 @@ export default function Login() {
             data-aos-easing="ease-out-cubic"
             data-aos-duration="1000"
           >
-            <img className="w-96 object-cover" src={img} alt="" />
+            <img className="w-96 object-cover" src="https://i.ibb.co/yy9QLRM/groot.jpg" alt="" />
           </div>
           <div className="card flex-shrink-0 max-w-sm shadow-2xl bg-base-100 w-full md:w-1/2">
             <h1
@@ -159,4 +159,6 @@ export default function Login() {
       </div>
     </form>
   );
-}
+};
+
+export default Login;

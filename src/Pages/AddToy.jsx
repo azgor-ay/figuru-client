@@ -3,7 +3,9 @@ import { FaHammer } from "react-icons/fa";
 import { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider";
-export default function AddToy() {
+import useTitle from "../customHooks/useTitle";
+const AddToy = () => {
+  useTitle('Add Toy')
   const { user, newToyAdded, setNewToyAdded } = useContext(AuthContext);
   const {
     register,
@@ -239,3 +241,4 @@ export default function AddToy() {
     </form>
   );
 }
+export default AddToy;

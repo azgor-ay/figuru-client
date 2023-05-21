@@ -1,8 +1,4 @@
-import React, { forwardRef } from "react";
-import slide1 from "../../assets/Banner/Img-1.jpg";
-import slide2 from "../../assets/Banner/Img-2.jpg";
-import slide3 from "../../assets/Banner/Img-3.jpg";
-import slide4 from "../../assets/Banner/Img-4.jpg";
+import React from "react";
 
 const TrendingFigures = () => {
   return (
@@ -22,10 +18,12 @@ const TrendingFigures = () => {
         data-aos-duration="2000"
       >
         <div id="slide1" className="carousel-item relative w-full">
-          <img src={slide1} className="w-full" />
+          <img src="https://i.ibb.co/nPTpxMK/Img-1.jpg" className="w-full" />
           <div className="absolute top-16 lg:top-1/4 left-20 lg:left-48">
             <h4 className="title text-xs lg:text-3xl">Action Figure of</h4>
-            <h2 className="text-2xl lg:text-7xl font-extrabold">Rocket Raccoon</h2>
+            <h2 className="text-2xl lg:text-7xl font-extrabold">
+              Rocket Raccoon
+            </h2>
             <p className="text-xl py-3 w-1/2 hidden lg:block">
               Rocket Raccoon action figure is an incredible replica of the
               notorious Guardians of the Galaxy character. Standing at 6 inches
@@ -46,10 +44,12 @@ const TrendingFigures = () => {
           </div>
         </div>
         <div id="slide2" className="carousel-item relative w-full">
-          <img src={slide2} className="w-full" />
+          <img src="https://i.ibb.co/WGjdzKg/Img-2.jpg" className="w-full" />
           <div className="absolute top-12 lg:top-1/4 right-24 lg:right-48 text-right">
             <h4 className="title text-xs lg:text-3xl">Action Figure of</h4>
-            <h2 className="text-2xl pl-48 lg:pl-0 lg:text-6xl font-extrabold">The OG Guardian</h2>
+            <h2 className="text-2xl pl-48 lg:pl-0 lg:text-6xl font-extrabold">
+              The OG Guardian
+            </h2>
             <p className="text-xl relative pl-96 ml-64 text-right py-3 hidden lg:block">
               The OG Guardian action figure pays homage to the legendary
               founding member of the Guardians of the Galaxy. Standing at 6
@@ -71,10 +71,12 @@ const TrendingFigures = () => {
           </div>
         </div>
         <div id="slide3" className="carousel-item relative w-full">
-          <img src={slide3} className="w-full" />
+          <img src="https://i.ibb.co/3NxJry5/Img-3.jpg" className="w-full" />
           <div className="absolute lg:top-[100px] lg:left-48 left-20 top-12">
             <h4 className="title text-xs lg:text-3xl">Action Figure of</h4>
-            <h2 className="text-4xl lg:text-8xl font-extrabold pr-48 lg:pr-0 ">Baby Groot</h2>
+            <h2 className="text-4xl lg:text-8xl font-extrabold pr-48 lg:pr-0 ">
+              Baby Groot
+            </h2>
             <p className="text-xl w-1/2 py-3 hidden lg:block">
               The Baby Groot action figure brings the adorable and lovable
               character from Guardians of the Galaxy to life. Standing at a
@@ -99,7 +101,7 @@ const TrendingFigures = () => {
           </div>
         </div>
         <div id="slide4" className="carousel-item relative w-full">
-          <img src={slide4} className="w-full" />
+          <img src="https://i.ibb.co/8gWnz3P/Img-4.jpg" className="w-full" />
           <div className="absolute top-[50px] left-1/4">
             <h4 className="title text-xs lg:text-3xl">Our favorite</h4>
             <h2 className="text-2xl lg:text-5xl font-extrabold leading-normal">

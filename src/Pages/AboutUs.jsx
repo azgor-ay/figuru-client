@@ -1,14 +1,15 @@
 import React from "react";
-import batman from "../assets/About Page/pngwing.com.png";
 import { Link } from "react-router-dom";
+import useTitle from "../customHooks/useTitle";
 const AboutUs = () => {
+  useTitle('About Us')
   return (
     <div>
       {/* About Banner */}
       <div
         className="hero min-h-screen relative -top-24 rounded-3xl"
         style={{
-          backgroundImage: `url("https://images.unsplash.com/photo-1608889825103-eb5ed706fc64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80")`,
+          backgroundImage: `url("https://i.ibb.co/QQ7h7Wp/about-Banner-1.jpg")`,
         }}
       >
         <div className="hero-overlay bg-opacity-30 rounded-3xl"></div>
@@ -39,7 +40,7 @@ const AboutUs = () => {
       <div className="lg:py-16">
         <div className="flex flex-col items-center justify-between lg:flex-row">
           <img
-            src={batman}
+            src="https://i.ibb.co/mGCk2jR/pngwing-com.png"
             className="max-w-sm w-full lg:w-1/2 mx-auto"
             data-aos="fade-right"
             data-aos-duration="2000"
@@ -94,7 +95,7 @@ const AboutUs = () => {
         id="community"
         className="hero min-h-screen lg:rounded-t-3xl"
         style={{
-          backgroundImage: `url("https://images.unsplash.com/photo-1559107503-521c2b36b98d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80")`,
+          backgroundImage: `url("https://i.ibb.co/F4QMmWr/bottom.jpg")`,
         }}
       >
         <div className="hero-overlay bg-opacity-60 lg:rounded-t-3xl"></div>

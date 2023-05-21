@@ -10,8 +10,10 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import useTitle from "../customHooks/useTitle";
 
 const MyToys = () => {
+  useTitle('My Toys')
   const { user } = useContext(AuthContext);
   const [dataChange, setDataChange] = useState(false);
 

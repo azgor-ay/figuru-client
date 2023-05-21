@@ -1,19 +1,16 @@
 import React, { useContext } from "react";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
-import logo from "../../assets/logo/Logo.webp";
 import { AuthContext } from "../../AuthProvider";
 import { Tooltip } from "react-tooltip";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location);
 
   const handleLogOut = () => {
     logOut()
       .then((result) => {
-          console.log(result);
-        // navigate(location?.pathname || "/");
+        navigate(location?.pathname || "/");
       })
       .catch((error) => {
         console.log(error.message);
@@ -102,7 +99,7 @@ const Header = () => {
           </ul>
         </div>
         <Link to="/">
-          <img className="w-48" src={logo} alt="" />
+          <img className="w-48" src="https://i.ibb.co/sQh4wqR/Logo.png" alt="" />
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">

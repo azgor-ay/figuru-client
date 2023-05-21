@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../AuthProvider";
+import useTitle from "../customHooks/useTitle";
 
 const UsersProfile = () => {
+  useTitle('Seller Profile')
   const { user } = useContext(AuthContext);
-  console.log(user);
   const userPhoto = user?.photoUrl;
   return (
     <div className="text-center p-6">

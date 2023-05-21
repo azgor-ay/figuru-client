@@ -3,8 +3,10 @@ import { FaBoxOpen, FaEdit, FaPhone, FaSearch, FaTrash } from "react-icons/fa";
 import { AuthContext } from "../AuthProvider";
 import Swal from "sweetalert2";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import useTitle from "../customHooks/useTitle";
 
 const AllToys = () => {
+  useTitle('All Toys')
   const { loading } = useContext(AuthContext);
   const [allToys, setAllToys] = useState([]);
   const navigate = useNavigate();
@@ -38,7 +40,7 @@ const AllToys = () => {
   }
 
   if (loading) {
-    return "Loading";
+    return <progress className="progress progress-primary w-56" value="70" max="100"></progress>;
   } else {
     return (
       <div className="overflow-x-auto w-full">

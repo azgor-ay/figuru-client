@@ -27,11 +27,11 @@
 
 /* Navlinks Buttons */
 .activeNav{
-    @apply mx-2 rounded-lg
+    @apply mx-2 rounded-lg font-semibold
 }
 
 .default{
-    @apply  mx-2 
+    @apply  mx-2  font-semibold
 }
 
 /* pagination buttons */
