@@ -17,8 +17,11 @@ const Register = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    const { email, password } = data;
+    const { email, password, confirmPassword } = data;
     console.log(data);
+    if(!/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)){
+      setPassNotMatch("Password should have Minimum eight characters, at least one letter and one number")
+    }
     if(password !== confirmPassword){
       setPassNotMatch("Password Didn't match")
       return
@@ -128,6 +131,9 @@ const Register = () => {
                 <label className="label">
                   <span className="label-text">Confirm Password</span>
                 </label>
+                {
+                  passNotMatch.length > 0 && <p>{passNotMatch}</p>
+                }
                 <input
                   type={showConPass ? "text" : "password"}
                   placeholder="Re-type password"

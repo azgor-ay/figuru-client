@@ -85,7 +85,6 @@ const AboutUs = () => {
               meticulously executed to deliver an exceptional piece that you'll
               cherish for years to come.
             </p>
-            <button className="btn btn-primary">Visit Shop</button>
           </div>
         </div>
       </div>
