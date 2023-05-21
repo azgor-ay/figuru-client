@@ -1,17 +1,19 @@
 import React, { useContext } from "react";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
-import logo from "../../../public/Logo.webp";
+import logo from "../../assets/logo/Logo.webp";
 import { AuthContext } from "../../AuthProvider";
 import { Tooltip } from "react-tooltip";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
+  console.log(location);
 
   const handleLogOut = () => {
     logOut()
       .then((result) => {
-        navigate(location?.pathname || "/");
+          console.log(result);
+        // navigate(location?.pathname || "/");
       })
       .catch((error) => {
         console.log(error.message);
@@ -41,34 +43,62 @@ const Header = () => {
             tabIndex={0}
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li>
-              <a>Item 1</a>
-            </li>
-            <li tabIndex={0}>
-              <a className="justify-between">
-                Parent
-                <svg
-                  className="fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
+           <li>
+            <NavLink
+              className={({ isActive }) => (isActive ? "activeNav" : "default")}
+              to={"/"}
+            >
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) => (isActive ? "activeNav" : "default")}
+              to={"/about"}
+            >
+              About Us
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) => (isActive ? "activeNav" : "default")}
+              to={"/blog"}
+            >
+              Blog
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) => (isActive ? "activeNav" : "default")}
+              to={"/allToys"}
+            >
+              All Toys
+            </NavLink>
+          </li>
+          {user && (
+            <>
+              <li>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "activeNav" : "default"
+                  }
+                  to={"/myToys"}
                 >
-                  <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
-                </svg>
-              </a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a>Item 3</a>
-            </li>
+                  My Toys
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "activeNav" : "default"
+                  }
+                  to={"/addToy"}
+                >
+                  Add A Toy
+                </NavLink>
+              </li>
+            </>
+          )}
           </ul>
         </div>
         <Link to="/">

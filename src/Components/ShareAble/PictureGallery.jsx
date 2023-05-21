@@ -17,7 +17,7 @@ const PictureGallery = () => {
       data-aos-easing="ease-out-cubic"
       data-aos-duration="6000"
     >
-        <h1 className="heading text-center py-5">Our photo <span className="heading2">gallery</span></h1>
+        <h1 className="text-4xl lg:text-6xl font-semibold text-center py-5">Our photo <span className="heading2">gallery</span></h1>
       <PhotoAlbum layout="columns" photos={photos} />
     </div>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import logo from '../../../public/LogoWhite.webp'
+import logo from '../../assets/logo/LogoWhite.webp'
 const Footer = () => {
   return (
     <footer className="footer footer-center p-10 bg-primary text-primary-content">

@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-const HomeBanner = () => {
+const   HomeBanner = () => {
 
   return (
     <div
@@ -10,7 +10,7 @@ const HomeBanner = () => {
       }}
     >
       <div className="hero-overlay bg-opacity-5 rounded-3xl"></div>
-      <div className="max-w-2xl relative -top-24 -left-24 space-y-5">
+      <div className="w-full text-center p-3 lg:text-left lg:max-w-2xl relative -top-24 lg:-left-24 space-y-5">
         <h1 data-aos="fade-down" className="heading">
           Welcome to <span className="heading2">Figuru</span>
         </h1>

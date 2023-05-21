@@ -12,6 +12,7 @@ export default function Login() {
   const from = location?.state?.from?.pathname || "/";
 
   const [wrongPassMSG, setWrongPassMSG] = useState(" ");
+  const [noAccount, setNoAccount] = useState("");
   const {
     register,
     handleSubmit,
@@ -19,6 +20,7 @@ export default function Login() {
   } = useForm();
   const onSubmit = (data) => {
     setWrongPassMSG(" ");
+    setNoAccount("");
     const { email, password } = data;
     login(email, password)
       .then((result) => {
@@ -29,11 +31,13 @@ export default function Login() {
         if (
           password.length > 0 &&
           error.message === "Firebase: Error (auth/wrong-password)."
-        );
-        else if (password.length < 0) {
+        ) {
+          setWrongPassMSG("Wrong Password");
+        } else if (password.length < 0) {
           setWrongPassMSG(" ");
+        } else if (error.message === "Firebase: Error (auth/user-not-found).") {
+          setNoAccount("wrong email id or you don't have an account");
         }
-        setWrongPassMSG("Wrong Password");
       });
   };
 
@@ -127,6 +131,11 @@ export default function Login() {
                   className="btn btn-primary"
                   value="Login"
                 />
+                {noAccount.length > 0 && (
+                  <p className="bg-red-600 text-white py-1 text-xs text-center w-full rounded-3xl mt-4 -mb-2">
+                    {noAccount}
+                  </p>
+                )}
                 <p className="text-center pt-2">
                   Don't have an account?{" "}
                   <Link to="/register" className="link">

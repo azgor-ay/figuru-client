@@ -8,7 +8,7 @@ const TrendingFigures = () => {
   return (
     <div>
       <h1
-        className="heading text-center py-5"
+        className="text-4xl px-12 lg:text-6xl font-semibold text-center py-5"
         data-aos="zoom-out"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="2000"
@@ -23,10 +23,10 @@ const TrendingFigures = () => {
       >
         <div id="slide1" className="carousel-item relative w-full">
           <img src={slide1} className="w-full" />
-          <div className="absolute top-1/4 left-48">
-            <h4 className="title text-3xl">Action Figure of</h4>
-            <h2 className="text-7xl font-extrabold">Rocket Raccoon</h2>
-            <p className="text-xl py-3 w-1/2">
+          <div className="absolute top-16 lg:top-1/4 left-20 lg:left-48">
+            <h4 className="title text-xs lg:text-3xl">Action Figure of</h4>
+            <h2 className="text-2xl lg:text-7xl font-extrabold">Rocket Raccoon</h2>
+            <p className="text-xl py-3 w-1/2 hidden lg:block">
               Rocket Raccoon action figure is an incredible replica of the
               notorious Guardians of the Galaxy character. Standing at 6 inches
               tall, this highly detailed collectible features Rocket's signature
@@ -37,20 +37,20 @@ const TrendingFigures = () => {
             </p>
           </div>
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide4" className="btn btn-circle btn-primary">
+            <a href="#slide4" className="lg:btn lg:btn-circle lg:btn-primary">
               ❮
             </a>
-            <a href="#slide2" className="btn btn-circle btn-primary">
+            <a href="#slide2" className="lg:btn lg:btn-circle lg:btn-primary">
               ❯
             </a>
           </div>
         </div>
         <div id="slide2" className="carousel-item relative w-full">
           <img src={slide2} className="w-full" />
-          <div className="absolute top-1/4 right-48 text-right">
-            <h4 className="title text-3xl">Action Figure of</h4>
-            <h2 className="text-6xl font-extrabold">The OG Guardian</h2>
-            <p className="text-xl relative pl-96 ml-64 text-right py-3">
+          <div className="absolute top-12 lg:top-1/4 right-24 lg:right-48 text-right">
+            <h4 className="title text-xs lg:text-3xl">Action Figure of</h4>
+            <h2 className="text-2xl pl-48 lg:pl-0 lg:text-6xl font-extrabold">The OG Guardian</h2>
+            <p className="text-xl relative pl-96 ml-64 text-right py-3 hidden lg:block">
               The OG Guardian action figure pays homage to the legendary
               founding member of the Guardians of the Galaxy. Standing at 6
               inches tall, this meticulously crafted collectible showcases the
@@ -62,20 +62,20 @@ const TrendingFigures = () => {
             </p>
           </div>
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide1" className="btn btn-circle btn-primary">
+            <a href="#slide1" className="lg:btn lg:btn-circle lg:btn-primary">
               ❮
             </a>
-            <a href="#slide3" className="btn btn-circle btn-primary">
+            <a href="#slide3" className="lg:btn lg:btn-circle lg:btn-primary">
               ❯
             </a>
           </div>
         </div>
         <div id="slide3" className="carousel-item relative w-full">
           <img src={slide3} className="w-full" />
-          <div className="absolute top-[100px] left-48">
-            <h4 className="title text-3xl">Action Figure of</h4>
-            <h2 className="text-8xl font-extrabold">Baby Groot</h2>
-            <p className="text-xl w-1/2 py-3">
+          <div className="absolute lg:top-[100px] lg:left-48 left-20 top-12">
+            <h4 className="title text-xs lg:text-3xl">Action Figure of</h4>
+            <h2 className="text-4xl lg:text-8xl font-extrabold pr-48 lg:pr-0 ">Baby Groot</h2>
+            <p className="text-xl w-1/2 py-3 hidden lg:block">
               The Baby Groot action figure brings the adorable and lovable
               character from Guardians of the Galaxy to life. Standing at a
               charming 4 inches tall, this meticulously designed collectible
@@ -90,10 +90,10 @@ const TrendingFigures = () => {
             </p>
           </div>
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide2" className="btn btn-circle btn-primary">
+            <a href="#slide2" className="lg:btn lg:btn-circle lg:btn-primary">
               ❮
             </a>
-            <a href="#slide4" className="btn btn-circle btn-primary">
+            <a href="#slide4" className="lg:btn lg:btn-circle lg:btn-primary">
               ❯
             </a>
           </div>
@@ -101,11 +101,11 @@ const TrendingFigures = () => {
         <div id="slide4" className="carousel-item relative w-full">
           <img src={slide4} className="w-full" />
           <div className="absolute top-[50px] left-1/4">
-            <h4 className="title text-3xl">Our favorite</h4>
-            <h2 className="text-5xl font-extrabold leading-normal">
+            <h4 className="title text-xs lg:text-3xl">Our favorite</h4>
+            <h2 className="text-2xl lg:text-5xl font-extrabold leading-normal">
               Deadpool's Double Trouble Display : <br /> Merc with a Quirk
             </h2>
-            <p className="text-xl py-3 mr-24">
+            <p className="text-xl py-3 mr-24 hidden lg:block">
               Unleash the witty chaos of Deadpool with our captivating "Double
               Trouble Display: Merc with a Quirk"! This eye-catching showcase
               features an action-packed scene that captures Deadpool's zany
@@ -126,10 +126,10 @@ const TrendingFigures = () => {
             </p>
           </div>
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide3" className="btn btn-circle btn-primary">
+            <a href="#slide3" className="lg:btn lg:btn-circle lg:btn-primary">
               ❮
             </a>
-            <a href="#slide1" className="btn btn-circle btn-primary">
+            <a href="#slide1" className="lg:btn lg:btn-circle lg:btn-primary">
               ❯
             </a>
           </div>

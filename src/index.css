@@ -18,7 +18,11 @@
 
 
 .subCategoryTitle {
-   @apply text-5xl capitalize font-extrabold text-center py-5 mb-12 bg-clip-text text-transparent bg-gradient-to-br from-amber-500 to-amber-900 drop-shadow-md shadow-info-content
+
+}
+
+.subCategoryTitleSM {
+   @apply text-2xl capitalize font-extrabold text-center py-3 mb-2 bg-clip-text text-transparent bg-gradient-to-br from-amber-500 to-amber-900 drop-shadow-md shadow-info-content
 }
 
 /* Navlinks Buttons */

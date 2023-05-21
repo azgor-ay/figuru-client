@@ -36,17 +36,17 @@ const AboutUs = () => {
       </div>
 
       {/* Our Mission */}
-      <div className="py-16">
+      <div className="lg:py-16">
         <div className="flex flex-col items-center justify-between lg:flex-row">
           <img
             src={batman}
-            className="max-w-sm w-1/2 mx-auto"
+            className="max-w-sm w-full lg:w-1/2 mx-auto"
             data-aos="fade-right"
             data-aos-duration="2000"
           />
-          <div className="w-1/2" data-aos="fade-left" data-aos-duration="2000">
+          <div className="lg:w-1/2 px-6" data-aos="fade-left" data-aos-duration="2000">
             <h1 className="text-5xl font-bold">Our Mission</h1>
-            <p className="py-6 pr-48">
+            <p className="py-6 lg:pr-48">
               Our mission is to create an immersive experience for superhero
               enthusiasts, collectors, and fans alike. We strive to provide you
               with the finest superhero figures that embody the essence and
@@ -61,13 +61,13 @@ const AboutUs = () => {
 
       {/* Quality and Craft Man Ship */}
       <div className="py-24">
-        <div className="flex flex-col items-center lg:flex-row-reverse">
+        <div className="flex flex-col items-center lg:flex-row-reverse space-y-6">
           <img
             data-aos="fade-left"
             data-aos-duration="2000"
             src="https://s3b.cashify.in/gpro/uploads/2022/09/15120606/Best-3D-Printers-In-India.jpg"
             alt="3d printer"
-            className="w-1/2 rounded-lg"
+            className="w-10/12 lg:w-1/2 rounded-lg"
           />
           <div
             className="text-right mx-10"
@@ -92,12 +92,12 @@ const AboutUs = () => {
       {/* Community */}
       <div
         id="community"
-        className="hero min-h-screen rounded-t-3xl"
+        className="hero min-h-screen lg:rounded-t-3xl"
         style={{
           backgroundImage: `url("https://images.unsplash.com/photo-1559107503-521c2b36b98d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80")`,
         }}
       >
-        <div className="hero-overlay bg-opacity-60 rounded-t-3xl"></div>
+        <div className="hero-overlay bg-opacity-60 lg:rounded-t-3xl"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-3xl">
             <h1

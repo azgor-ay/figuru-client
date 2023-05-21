@@ -4,6 +4,7 @@ import { AuthContext } from "../AuthProvider";
 const UsersProfile = () => {
   const { user } = useContext(AuthContext);
   console.log(user);
+  const userPhoto = user?.photoUrl;
   return (
     <div className="text-center p-6">
       <h1
@@ -15,13 +16,15 @@ const UsersProfile = () => {
         Your Profile at <span className="heading2">Figuru</span>
       </h1>
       <div className="text-center">
-        <img
-          src={user?.photoURL}
-          className="mx-auto rounded-full py-2"
-          data-aos="zoom-out"
-          data-aos-easing="ease-out-cubic"
-          data-aos-duration="2000"
-        />
+          {user.photoURL ? <img
+            src={user.photoURL}
+            className="mx-auto rounded-full py-2"
+            data-aos="zoom-out"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000"
+          /> :
+        <img src="https://i.ibb.co/HBbr8DM/User.png" alt="" />}
+
         <h4 className="text-3xl font-extrabold">{user?.displayName}</h4>
         <p>{user?.email}</p>
         <div className="badge">

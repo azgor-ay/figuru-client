@@ -27,14 +27,16 @@ const ActionFigures = () => {
   return (
     <div>
       {category && (
-        <div className="p-12 text-center">
-          <h3 className="heading" id="actionFigures">
+        <div className=" px-3 mb-6 lg:p-12 text-center">
+          <h3 className="text-3xl lg:text-6xl " id="actionFigures">
             Explore our awesome <span className="heading2">action figures</span>
           </h3>
-          <Tabs className={"shadow-xl p-6 rounded-xl"}>
+          <Tabs className={"lg:shadow-xl py-3 lg:p-6 rounded-xl"}>
             <TabList>
               {subCategories.map((ctg) => (
-                <Tab onClick={() => setCategory(ctg.category)} key={ctg._id}>
+                <Tab 
+
+                onClick={() => setCategory(ctg.category)} key={ctg._id}>
                   {ctg.category}
                 </Tab>
               ))}
@@ -43,7 +45,7 @@ const ActionFigures = () => {
             {/* Sub Category of Action Figures */}
             {/* DC */}
               <TabPanel>
-                <h2 className="subCategoryTitle">
+                <h2 className="text-2xl lg:text-5xl capitalize font-extrabold text-center py-5 mb-12 bg-clip-text text-transparent bg-gradient-to-br from-amber-500 to-amber-900 drop-shadow-md shadow-info-content">
                   World Class DCU Super Heros
                 </h2>
                 <div className="grid md:grid-cols-2 gap-10">
