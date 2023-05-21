@@ -151,7 +151,7 @@ export default function Register() {
                 onClick={handleAuthenticateWithGoogle}
               >
                 <p className="text-xl">
-                  <FaGoogle className="inline mx-1 font-bold " /> Register with
+                  <FaGoogle className="inline mx-1 font-bold " /> Continue with
                   Google
                 </p>
               </div>

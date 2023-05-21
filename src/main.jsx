@@ -15,11 +15,14 @@ import AuthProvider from "./AuthProvider";
 import ToyDetails from "./Pages/ToyDetails";
 import AuthRequired from "./AuthRequired";
 import UpdateToy from "./Pages/UpdateToy";
+import UsersProfile from "./Pages/UsersProfile";
+import ErrorPage from "./Pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <WebsiteLayout></WebsiteLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -40,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <Blog></Blog>,
+      },
+      {
+        path: "/profile",
+        element: <UsersProfile></UsersProfile>,
       },
       {
         path: "/singleToyDetails/:id",

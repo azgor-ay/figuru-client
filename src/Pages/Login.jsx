@@ -40,10 +40,9 @@ export default function Login() {
   const handleAuthenticateWithGoogle = () => {
     signInWithGoogle()
       .then((result) => {
-        setUser(result.user)
+        setUser(result.user);
         console.log(result.user);
         navigate(from, { replace: true });
-        
       })
       .catch((error) => {
         console.log(error.message);
@@ -54,11 +53,23 @@ export default function Login() {
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="hero min-h-screen">
         <div className="hero-content flex-col items-center lg:flex-row-reverse">
-          <div className="text-center w-1/2 lg:text-left lg:ml-32">
+          <div
+            className="text-center w-1/2 lg:text-left lg:ml-32"
+            data-aos="fade-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1000"
+          >
             <img className="w-96 object-cover" src={img} alt="" />
           </div>
           <div className="card flex-shrink-0 max-w-sm shadow-2xl bg-base-100 w-full md:w-1/2">
-            <h1 className="text-5xl font-bold text-center">Login now!</h1>
+            <h1
+              className="text-5xl font-bold text-center"
+              data-aos="fade-down"
+              data-aos-easing="ease-out-cubic"
+              data-aos-duration="1000"
+            >
+              Login now!
+            </h1>
             <div className="card-body">
               <div className="form-control">
                 <label className="label">
@@ -92,7 +103,7 @@ export default function Login() {
                 <div
                   onClick={() => setShowPass(!showPass)}
                   className={`relative w-4 left-64 lg:left-72 ${
-                    wrongPassMSG.length > 1 ? "bottom-12" : "bottom-6"
+                    wrongPassMSG.length > 1 ? "bottom-12" : "bottom-8"
                   }  cursor-pointer`}
                 >
                   {showPass ? (

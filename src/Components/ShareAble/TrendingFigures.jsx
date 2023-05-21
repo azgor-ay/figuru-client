@@ -7,10 +7,20 @@ import slide4 from "../../assets/Banner/Img-4.jpg";
 const TrendingFigures = () => {
   return (
     <div>
-      <h1 className="heading text-center py-5">
-        Our Trending <span className="">Action Figures</span>
+      <h1
+        className="heading text-center py-5"
+        data-aos="zoom-out"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000"
+      >
+        Our Trending <span className="heading2">Action Figures</span>
       </h1>
-      <div className="carousel w-full">
+      <div
+        className="carousel w-full"
+        data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000"
+      >
         <div id="slide1" className="carousel-item relative w-full">
           <img src={slide1} className="w-full" />
           <div className="absolute top-1/4 left-48">

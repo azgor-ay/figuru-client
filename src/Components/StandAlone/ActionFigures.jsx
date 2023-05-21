@@ -25,69 +25,76 @@ const ActionFigures = () => {
   }, [category, newToyAdded]);
 
   return (
-      <div className="p-12 text-center" >
-        <h3 className="heading" id="actionFigures">
-          Explore our awesome <span className="heading2">action figures</span>
-        </h3>
-        <Tabs className={"shadow-xl p-6 rounded-xl"}>
-          <TabList>
-            {subCategories.map((ctg) => (
-              <Tab onClick={() => setCategory(ctg.category)} key={ctg._id}>
-                {ctg.category}
-              </Tab>
-            ))}
-          </TabList>
+    <div>
+      {category && (
+        <div className="p-12 text-center">
+          <h3 className="heading" id="actionFigures">
+            Explore our awesome <span className="heading2">action figures</span>
+          </h3>
+          <Tabs className={"shadow-xl p-6 rounded-xl"}>
+            <TabList>
+              {subCategories.map((ctg) => (
+                <Tab onClick={() => setCategory(ctg.category)} key={ctg._id}>
+                  {ctg.category}
+                </Tab>
+              ))}
+            </TabList>
 
-          {/* Sub Category of Action Figures */}
+            {/* Sub Category of Action Figures */}
             {/* DC */}
+              <TabPanel>
+                <h2 className="subCategoryTitle">
+                  World Class DCU Super Heros
+                </h2>
+                <div className="grid md:grid-cols-2 gap-10">
+                  {toys.map((toy) => (
+                    <ToyCard key={toy._id} toy={toy}></ToyCard>
+                  ))}
+                </div>
+              </TabPanel>
+            {/* The Boys */}
             <TabPanel>
-            <h2 className="subCategoryTitle">World Class DCU Super Heros</h2>
-            <div className="grid md:grid-cols-2 gap-10">
-              {toys.map((toy) => (
-                <ToyCard key={toy._id} toy={toy}></ToyCard>
-              ))}
-            </div>
-          </TabPanel>
-          {/* The Boys */}
-          <TabPanel>
-            <h2 className="subCategoryTitle">
-              World Class Conflicted Super Humans
-            </h2>
-            <div className="grid md:grid-cols-2 gap-10">
-              {toys.map((toy) => (
-                <ToyCard key={toy._id} toy={toy}></ToyCard>
-              ))}
-            </div>
-          </TabPanel>
-          {/* Transformers */}
-          <TabPanel>
-            <h2 className="subCategoryTitle">Transformers Earth Saviors</h2>
-            <div className="grid md:grid-cols-2 gap-10">
-              {toys.map((toy) => (
-                <ToyCard key={toy._id} toy={toy}></ToyCard>
-              ))}
-            </div>
-          </TabPanel>
-          {/* Indian */}
-          <TabPanel>
-            <h2 className="subCategoryTitle">Indian Desi Super Heros</h2>
-            <div className="grid md:grid-cols-2 gap-10">
-              {toys.map((toy) => (
-                <ToyCard key={toy._id} toy={toy}></ToyCard>
-              ))}
-            </div>
-          </TabPanel>
-          {/* Marvel */}
-          <TabPanel>
-            <h2 className="subCategoryTitle">World Class MCU Super Heros</h2>
-            <div className="grid md:grid-cols-2 gap-10">
-              {toys.map((toy) => (
-                <ToyCard key={toy._id} toy={toy}></ToyCard>
-              ))}
-            </div>
-          </TabPanel>
-        </Tabs>
-      </div>
+              <h2 className="subCategoryTitle">
+                World Class Conflicted Super Humans
+              </h2>
+              <div className="grid md:grid-cols-2 gap-10">
+                {toys.map((toy) => (
+                  <ToyCard key={toy._id} toy={toy}></ToyCard>
+                ))}
+              </div>
+            </TabPanel>
+            {/* Transformers */}
+            <TabPanel>
+              <h2 className="subCategoryTitle">Transformers Earth Saviors</h2>
+              <div className="grid md:grid-cols-2 gap-10">
+                {toys.map((toy) => (
+                  <ToyCard key={toy._id} toy={toy}></ToyCard>
+                ))}
+              </div>
+            </TabPanel>
+            {/* Indian */}
+            <TabPanel>
+              <h2 className="subCategoryTitle">Indian Desi Super Heros</h2>
+              <div className="grid md:grid-cols-2 gap-10">
+                {toys.map((toy) => (
+                  <ToyCard key={toy._id} toy={toy}></ToyCard>
+                ))}
+              </div>
+            </TabPanel>
+
+            {/* Marvel */}
+            <TabPanel>
+              <h2 className="subCategoryTitle">World Class MCU Super Heros</h2>
+              <div className="grid md:grid-cols-2 gap-10">
+                {toys.map((toy) => (
+                  <ToyCard key={toy._id} toy={toy}></ToyCard>
+                ))}
+              </div>
+            </TabPanel>
+          </Tabs>
+        </div>
+      )}
+    </div>
   );
 };
 

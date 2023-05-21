@@ -25,7 +25,7 @@ const ToyDetails = () => {
           src={image}
           className="max-w-xs rounded-lg"
         />
-        <div className="">
+        <div className="w-1/2">
           <h1 className="text-8xl font-bold">{name}</h1>
           <p className="py-6">
             {description}

@@ -5,10 +5,11 @@ import PhotoAlbum from "react-photo-album";
 const PictureGallery = () => {
   const [photos, setPhotos] = useState([]);
   useEffect(() => {
-    fetch(`https://figuru.vercel.app/galleryPhotos`)
+    fetch('https://figuru.vercel.app/galleryPhotos')
       .then((res) => res.json())
       .then((data) => setPhotos(data));
   }, []);
+
   return (
     <div
     className="py-12"

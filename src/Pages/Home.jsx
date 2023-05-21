@@ -1,9 +1,9 @@
-import React, { useRef } from "react";
+import React from "react";
 import HomeBanner from "../Components/StandAlone/HomeBanner";
-import PhotoGallery from "../Components/ShareAble/PhotoGallery";
 import TrendingFigures from "../Components/ShareAble/TrendingFigures";
 import PictureGallery from "../Components/ShareAble/PictureGallery";
 import ActionFigures from "../Components/StandAlone/ActionFigures";
+import NewsLetter from "../Components/ShareAble/NewsLetter";
 
 const Home = () => {
   return (
@@ -21,6 +21,9 @@ const Home = () => {
 
       {/* Trending Action Figures */}
       <TrendingFigures></TrendingFigures>
+
+      {/* News Letter */}
+      <NewsLetter></NewsLetter>
     </div>
   );
 };

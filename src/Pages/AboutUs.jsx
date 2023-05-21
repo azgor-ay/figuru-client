@@ -1,5 +1,6 @@
 import React from "react";
 import batman from "../assets/About Page/pngwing.com.png";
+import { Link } from "react-router-dom";
 const AboutUs = () => {
   return (
     <div>
@@ -13,17 +14,21 @@ const AboutUs = () => {
         <div className="hero-overlay bg-opacity-30 rounded-3xl"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-lg">
-            <h1 data-aos="fade-down" data-aos-duration="2000" className="mb-5 text-5xl font-bold">
+            <h1
+              data-aos="fade-down"
+              data-aos-duration="2000"
+              className="mb-5 text-5xl font-bold"
+            >
               About Figuru
             </h1>
-            <p className="mb-5" data-aos="fade-down"data-aos-duration="2000">
+            <p className="mb-5" data-aos="fade-down" data-aos-duration="2000">
               At Figuru, we believe in the power of superheroes. They inspire
               us, ignite our imaginations, and remind us of the extraordinary
               potential within each of us. We are passionate about bringing
               these iconic characters to life through meticulously crafted and
               highly detailed figures.
             </p>
-            <a href="#community" data-aos="fade-down"data-aos-duration="2000">
+            <a href="#community" data-aos="fade-down" data-aos-duration="2000">
               <button className="btn btn-primary">Join Community</button>
             </a>
           </div>
@@ -95,17 +100,29 @@ const AboutUs = () => {
         <div className="hero-overlay bg-opacity-60 rounded-t-3xl"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-3xl">
-            <h1 className="mb-5 text-5xl font-bold" data-aos="fade-up"data-aos-duration="4000">
+            <h1
+              className="mb-5 text-5xl font-bold"
+              data-aos="fade-up"
+              data-aos-duration="4000"
+            >
               Join the Figuru Community
             </h1>
-            <p className="mb-5" data-aos="fade-up"data-aos-duration="4000">
+            <p className="mb-5" data-aos="fade-up" data-aos-duration="4000">
               We invite you to join our vibrant community of superhero
               enthusiasts. Connect with fellow fans, share your collection, and
               stay updated on the latest releases, exclusive offers, and
               exciting events. Follow us on social media and sign up for our
               newsletter to be part of the Figuru family.
             </p>
-            <button className="btn btn-primary" data-aos="fade-up"data-aos-duration="4000">Join Community</button>
+            <Link to="/register">
+              <button
+                className="btn btn-primary"
+                data-aos="fade-up"
+                data-aos-duration="4000"
+              >
+                Create Account
+              </button>
+            </Link>
           </div>
         </div>
       </div>

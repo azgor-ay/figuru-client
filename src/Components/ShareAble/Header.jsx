@@ -6,12 +6,12 @@ import { Tooltip } from "react-tooltip";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
-  const location = useLocation()
+  const location = useLocation();
 
   const handleLogOut = () => {
     logOut()
       .then((result) => {
-        navigate(location?.pathname);
+        navigate(location?.pathname || "/");
       })
       .catch((error) => {
         console.log(error.message);
@@ -78,24 +78,58 @@ const Header = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <NavLink className={({isActive})=>isActive ? "activeNav" : "default"} to={"/"}>Home</NavLink>
+            <NavLink
+              className={({ isActive }) => (isActive ? "activeNav" : "default")}
+              to={"/"}
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink className={({isActive})=>isActive ? "activeNav" : "default"} to={"/about"}>About Us</NavLink>
+            <NavLink
+              className={({ isActive }) => (isActive ? "activeNav" : "default")}
+              to={"/about"}
+            >
+              About Us
+            </NavLink>
           </li>
           <li>
-            <NavLink className={({isActive})=>isActive ? "activeNav" : "default"} to={"/blog"}>Blog</NavLink>
+            <NavLink
+              className={({ isActive }) => (isActive ? "activeNav" : "default")}
+              to={"/blog"}
+            >
+              Blog
+            </NavLink>
           </li>
           <li>
-            <NavLink className={({isActive})=>isActive ? "activeNav" : "default"} to={"/allToys"}>All Toys</NavLink>
+            <NavLink
+              className={({ isActive }) => (isActive ? "activeNav" : "default")}
+              to={"/allToys"}
+            >
+              All Toys
+            </NavLink>
           </li>
           {user && (
             <>
               <li>
-                <NavLink className={({isActive})=>isActive ? "activeNav" : "default"} to={"/myToys"}>My Toys</NavLink>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "activeNav" : "default"
+                  }
+                  to={"/myToys"}
+                >
+                  My Toys
+                </NavLink>
               </li>
               <li>
-                <NavLink className={({isActive})=>isActive ? "activeNav" : "default"} to={"/addToy"}>Add A Toy</NavLink>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? "activeNav" : "default"
+                  }
+                  to={"/addToy"}
+                >
+                  Add A Toy
+                </NavLink>
               </li>
             </>
           )}
@@ -134,13 +168,12 @@ const Header = () => {
                 className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
               >
                 <li>
-                  <a className="justify-between">
-                    Profile
-                    <span className="badge">Seller</span>
-                  </a>
-                </li>
-                <li>
-                  <a>Settings</a>
+                  <Link to="/profile">
+                    <a className="flex justify-between">
+                      Profile
+                      <span className="badge mx-3">Seller</span>
+                    </a>
+                  </Link>
                 </li>
                 <li>
                   <a onClick={handleLogOut}>Logout</a>
