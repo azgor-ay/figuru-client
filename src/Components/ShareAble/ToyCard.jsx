@@ -22,7 +22,7 @@ const ToyCard = ({ toy }) => {
       data-aos="flip-left"
       data-aos-easing="ease-out-cubic"
       data-aos-duration="2000"
-      className="card card-side bg-base-100 rounded-3xl shadow-lg"
+      className="card card-side text-left bg-base-100 rounded-3xl shadow-lg"
     >
       <img className="w-1/2 object-cover rounded-l-3xl" src={image} alt="Toy" />
       <div className="p-5 flex flex-col">

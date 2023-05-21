@@ -39,17 +39,8 @@ const ActionFigures = () => {
           </TabList>
 
           {/* Sub Category of Action Figures */}
-          {/* Marvel */}
-          <TabPanel>
-            <h2 className="subCategoryTitle">World Class MCU Super Heros</h2>
-            <div className="grid md:grid-cols-2 gap-10">
-              {toys.map((toy) => (
-                <ToyCard key={toy._id} toy={toy}></ToyCard>
-              ))}
-            </div>
-          </TabPanel>
-          {/* DC */}
-          <TabPanel>
+            {/* DC */}
+            <TabPanel>
             <h2 className="subCategoryTitle">World Class DCU Super Heros</h2>
             <div className="grid md:grid-cols-2 gap-10">
               {toys.map((toy) => (
@@ -80,6 +71,15 @@ const ActionFigures = () => {
           {/* Indian */}
           <TabPanel>
             <h2 className="subCategoryTitle">Indian Desi Super Heros</h2>
+            <div className="grid md:grid-cols-2 gap-10">
+              {toys.map((toy) => (
+                <ToyCard key={toy._id} toy={toy}></ToyCard>
+              ))}
+            </div>
+          </TabPanel>
+          {/* Marvel */}
+          <TabPanel>
+            <h2 className="subCategoryTitle">World Class MCU Super Heros</h2>
             <div className="grid md:grid-cols-2 gap-10">
               {toys.map((toy) => (
                 <ToyCard key={toy._id} toy={toy}></ToyCard>
