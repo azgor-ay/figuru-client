@@ -24,23 +24,47 @@ const Blog = () => {
         </div>
       </div>
 
-      <div className="p-12 bg-base-300 my-12 rounded-3xl shadow-2xl">
+      <div
+        className="p-12 bg-base-300 my-12 rounded-3xl shadow-2xl"
+        data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000"
+      >
         <h3 className="text-xl font-bold">
           What is an access token and refresh token? How do they work and where
           should we store them on the client-side?
         </h3>
         <p>Answer: </p>
       </div>
-      <div className="p-12 bg-base-300 my-12 rounded-3xl shadow-2xl">
+      <div
+        className="p-12 bg-base-300 my-12 rounded-3xl shadow-2xl"
+        data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000"
+      >
         <h3 className="text-xl font-bold">Compare SQL and NoSQL databases?</h3>
         <p>Answer: </p>
       </div>
-      <div className="p-12 bg-base-300 my-12 rounded-3xl shadow-2xl">
-        <h3 className="text-xl font-bold">What is express JS? What is Nest JS?</h3>
+      <div
+        className="p-12 bg-base-300 my-12 rounded-3xl shadow-2xl"
+        data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000"
+      >
+        <h3 className="text-xl font-bold">
+          What is express JS? What is Nest JS?
+        </h3>
         <p>Answer: </p>
       </div>
-      <div className="p-12 bg-base-300 my-12 rounded-3xl shadow-2xl">
-        <h3 className="text-xl font-bold">What is MongoDB aggregate and how does it work?</h3>
+      <div
+        className="p-12 bg-base-300 my-12 rounded-3xl shadow-2xl"
+        data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000"
+      >
+        <h3 className="text-xl font-bold">
+          What is MongoDB aggregate and how does it work?
+        </h3>
         <p>Answer: </p>
       </div>
     </div>
